@@ -2,13 +2,13 @@ import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
 import CookieBanner from './CookieBanner.jsx'
 
-export default function Layout({ children }) {
+export default function Layout({ locale, page, children }) {
   return (
     <>
-      <Navbar />
+      <Navbar locale={locale} page={page} />
       {children}
-      <Footer />
-      <CookieBanner />
+      <Footer locale={locale} />
+      <CookieBanner locale={locale} />
     </>
   )
 }

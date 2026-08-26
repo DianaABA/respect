@@ -6,8 +6,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Layout locale="es" page="privacy">
-      <Privacy locale="es" />
+    <Layout locale="en" page="privacy">
+      <Privacy locale="en" />
     </Layout>
   </React.StrictMode>,
 )

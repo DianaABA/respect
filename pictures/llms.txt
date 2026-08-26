@@ -1,13 +1,19 @@
 # CD Respect
 
-> Club Deportivo Respect is a football (soccer) club based in El Fraile, Tenerife, Canary Islands, Spain. Founded in 2024. Address: Dionisio Gonzalez, El Fraile, Tenerife. Official Instagram: https://www.instagram.com/cd_respect
+> Club Deportivo Respect is a football (soccer) club based in El Fraile, Tenerife, Canary Islands, Spain. Founded in 2024. Address: Dionisio Gonzalez, El Fraile, Tenerife. Phone: +34 677 71 14 54. Email: cdrespect.es@gmail.com. Instagram: https://www.instagram.com/cd_respect. Facebook: https://www.facebook.com/cdrespect/
 
-## Pages
+## Pages (Spanish, default)
 
 - [Home](https://poetic-youtiao-dfd1bf.netlify.app/): Club overview, founding info, location, and the three programs: Juvenil (youth academy, alevin to juvenil age groups), Primer equipo (adult senior team), and Academia internacional (international academy open to players and families based in Tenerife).
 - [Cantera](https://poetic-youtiao-dfd1bf.netlify.app/cantera/): Youth academy detail page. The alevin team was champion of the Liga Alevin Preferente 2025-2026 season. Photo gallery and Instagram link.
 - [Privacidad](https://poetic-youtiao-dfd1bf.netlify.app/privacidad/): Privacy and cookie policy.
 
+## Pages (English)
+
+- [Home](https://poetic-youtiao-dfd1bf.netlify.app/en/): Same content as the Spanish home page, in English.
+- [Academy](https://poetic-youtiao-dfd1bf.netlify.app/en/youth/): Same content as /cantera/, in English.
+- [Privacy](https://poetic-youtiao-dfd1bf.netlify.app/en/privacy/): Same content as /privacidad/, in English.
+
 ## Notes
 
-All content is in Spanish. The club's guiding principle is respect: for opponents, referees, teammates, and the shirt. The site sets no tracking cookies; a cookie banner records only the visitor's accept/reject choice in local storage.
+Every page exists in both Spanish (default, at the root paths) and English (under /en/), with hreflang alternate links connecting each pair. A language switcher in the site header links between them. The club's guiding principle is respect: for opponents, referees, teammates, and the shirt. The site sets no tracking cookies; a cookie banner records only the visitor's accept/reject choice in local storage.

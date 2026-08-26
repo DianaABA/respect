@@ -6,8 +6,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Layout>
-      <Home />
+    <Layout locale="es" page="home">
+      <Home locale="es" />
     </Layout>
   </React.StrictMode>,
 )

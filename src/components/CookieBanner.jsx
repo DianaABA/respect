@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
+import { PAGE_PATHS } from '../lib/i18n.js'
+import { translations } from '../content/translations.js'
 
 const STORAGE_KEY = 'cd-respect-cookie-consent'
 
-export default function CookieBanner() {
+export default function CookieBanner({ locale }) {
   const [visible, setVisible] = useState(false)
+  const t = translations[locale].cookie
 
   useEffect(() => {
     try {
@@ -26,18 +29,17 @@ export default function CookieBanner() {
   if (!visible) return null
 
   return (
-    <div className="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+    <div className="cookie-banner" role="dialog" aria-label={t.ariaLabel}>
       <p className="cookie-banner__text">
-        Este sitio no utiliza cookies de seguimiento. La elección de este aviso se guarda
-        localmente en tu navegador. Más información en la{' '}
-        <a href={`${import.meta.env.BASE_URL}privacidad/`}>política de privacidad y cookies</a>.
+        {t.text}{' '}
+        <a href={PAGE_PATHS.privacy[locale]}>{t.linkText}</a>.
       </p>
       <div className="cookie-banner__actions">
         <button type="button" className="cookie-banner__btn cookie-banner__btn--ghost" onClick={() => choose('rejected')}>
-          Rechazar
+          {t.reject}
         </button>
         <button type="button" className="cookie-banner__btn cookie-banner__btn--gold" onClick={() => choose('accepted')}>
-          Aceptar
+          {t.accept}
         </button>
       </div>
     </div>

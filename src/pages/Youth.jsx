@@ -1,4 +1,5 @@
 import { asset } from '../lib/asset.js'
+import ArrowIcon from '../components/ArrowIcon.jsx'
 
 export default function Youth() {
   return (
@@ -54,7 +55,8 @@ export default function Youth() {
             target="_blank"
             rel="noreferrer"
           >
-            Seguir en Instagram
+            <span>Seguir en Instagram</span>
+            <ArrowIcon />
           </a>
         </div>
       </section>

@@ -1,18 +1,47 @@
+import { useEffect, useRef } from 'react'
 import { asset } from '../lib/asset.js'
+import ArrowIcon from '../components/ArrowIcon.jsx'
 
 export default function Home() {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    video.muted = true
+    const attemptPlay = () => video.play().catch(() => {})
+    attemptPlay()
+
+    const onInteract = () => {
+      if (video.paused) attemptPlay()
+      window.removeEventListener('pointerdown', onInteract)
+      window.removeEventListener('touchstart', onInteract)
+    }
+    window.addEventListener('pointerdown', onInteract, { once: true })
+    window.addEventListener('touchstart', onInteract, { once: true })
+
+    return () => {
+      window.removeEventListener('pointerdown', onInteract)
+      window.removeEventListener('touchstart', onInteract)
+    }
+  }, [])
+
   return (
     <main>
       <section className="hero">
         <video
+          ref={videoRef}
           className="hero__video"
-          src={asset('stadium.mp4')}
           poster={asset('stadium.png')}
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+        >
+          <source src={asset('stadium.mp4')} type="video/mp4" />
+        </video>
         <div className="hero__overlay" />
         <div className="hero__content">
           <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="hero__logo" />
@@ -73,7 +102,8 @@ export default function Home() {
               la Liga Alevín Preferente, junto a la directiva y el cuerpo técnico del club.
             </p>
             <a className="btn btn--gold" href={`${import.meta.env.BASE_URL}cantera/`}>
-              Ver cantera
+              <span>Ver cantera</span>
+              <ArrowIcon />
             </a>
           </div>
         </div>

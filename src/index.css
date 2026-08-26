@@ -447,8 +447,10 @@ p {
 
 /* Buttons */
 .btn {
-  display: inline-block;
-  padding: 0.9rem 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.75rem 0.9rem 2rem;
   border-radius: 999px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -459,17 +461,26 @@ p {
 .btn--gold {
   background: linear-gradient(135deg, var(--gold-300), var(--gold-500));
   color: var(--navy-950);
+  box-shadow: 0 6px 18px rgba(184, 146, 60, 0.22);
 }
 
 .btn--gold:hover {
   filter: brightness(1.08);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(184, 146, 60, 0.35);
+  box-shadow: 0 10px 28px rgba(184, 146, 60, 0.4);
 }
 
 .btn--gold:active {
   transform: translateY(0);
-  box-shadow: none;
+  box-shadow: 0 4px 12px rgba(184, 146, 60, 0.3);
+}
+
+.btn__arrow {
+  transition: transform 0.25s ease;
+}
+
+.btn--gold:hover .btn__arrow {
+  transform: translateX(4px);
 }
 
 /* Footer */
@@ -618,7 +629,7 @@ p {
 
   .btn {
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
 }
 

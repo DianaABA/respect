@@ -12,7 +12,6 @@ export const translations = {
     },
     home: {
       heroSub: 'Club Deportivo Respect',
-      heroMeta: 'Fundado en 2024 · El Fraile, Tenerife',
       info: {
         eyebrow: 'Info',
         title: 'Club Deportivo Respect',
@@ -105,7 +104,6 @@ export const translations = {
     },
     home: {
       heroSub: 'Respect Football Club',
-      heroMeta: 'Founded in 2024 · El Fraile, Tenerife',
       info: {
         eyebrow: 'Info',
         title: 'Respect Football Club',

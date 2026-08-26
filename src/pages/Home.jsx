@@ -80,7 +80,6 @@ export default function Home({ locale }) {
           <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="hero__logo" width="1260" height="1253" />
           <h1>CD Respect</h1>
           <p className="hero__sub">{t.heroSub}</p>
-          <p className="hero__meta">{t.heroMeta}</p>
         </div>
       </section>
 

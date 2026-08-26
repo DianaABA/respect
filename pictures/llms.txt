@@ -1,0 +1,13 @@
+# CD Respect
+
+> Club Deportivo Respect is a football (soccer) club based in El Fraile, Tenerife, Canary Islands, Spain. Founded in 2024. Address: Dionisio Gonzalez, El Fraile, Tenerife. Official Instagram: https://www.instagram.com/cd_respect
+
+## Pages
+
+- [Home](https://poetic-youtiao-dfd1bf.netlify.app/): Club overview, founding info, location, and the three programs: Juvenil (youth academy, alevin to juvenil age groups), Primer equipo (adult senior team), and Academia internacional (international academy open to players and families based in Tenerife).
+- [Cantera](https://poetic-youtiao-dfd1bf.netlify.app/cantera/): Youth academy detail page. The alevin team was champion of the Liga Alevin Preferente 2025-2026 season. Photo gallery and Instagram link.
+- [Privacidad](https://poetic-youtiao-dfd1bf.netlify.app/privacidad/): Privacy and cookie policy.
+
+## Notes
+
+All content is in Spanish. The club's guiding principle is respect: for opponents, referees, teammates, and the shirt. The site sets no tracking cookies; a cookie banner records only the visitor's accept/reject choice in local storage.

@@ -126,7 +126,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="academia" className="section section--wave" style={{ backgroundImage: `url(${asset('stadium_waves.png')})` }}>
+      <section id="academia" className="section section--wave">
+        <img src={asset('stadium_waves.png')} alt="" aria-hidden="true" className="section__bg" loading="lazy" />
         <div className="section__inner section__inner--split">
           <div className="split__image">
             <img src={asset('youth_2.png')} alt="Jugador entrenando en la Academia Internacional de CD Respect" loading="lazy" />

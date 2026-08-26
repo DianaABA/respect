@@ -27,6 +27,7 @@ export default function Footer() {
       </div>
       <div className="footer__bottom">
         <span>CD Respect, El Fraile, Tenerife</span>
+        <a href={`${import.meta.env.BASE_URL}privacidad/`}>Privacidad y cookies</a>
       </div>
     </footer>
   )

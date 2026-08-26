@@ -9,10 +9,10 @@ export default function Navbar({ locale, page }) {
   const t = translations[locale].nav
   const home = PAGE_PATHS.home[locale]
   const labels = locale === 'ru'
-    ? ['Senior Team', 'Academy Base', 'International Academy', 'Новости', 'Socios', 'Партнёры', 'Merch', 'Карьера', 'Контакты']
+    ? ['Senior Team', 'Academy Base', 'International Academy', 'Матчи', 'Новости', 'Socios', 'Ещё', 'Партнёры', 'Merch', 'Карьера', 'Базы', 'Контакты']
     : locale === 'es'
-      ? ['Senior Team', 'Academy Base', 'International Academy', 'Noticias', 'Socios', 'Socios comerciales', 'Merch', 'Empleo', 'Contacto']
-      : ['Senior Team', 'Academy Base', 'International Academy', 'News', 'Socios', 'Partners', 'Merch', 'Careers', 'Contact']
+      ? ['Senior Team', 'Academy Base', 'International Academy', 'Partidos', 'Noticias', 'Socios', 'Más', 'Socios comerciales', 'Merch', 'Empleo', 'Instalaciones', 'Contacto']
+      : ['Senior Team', 'Academy Base', 'International Academy', 'Matches', 'News', 'Socios', 'More', 'Partners', 'Merch', 'Careers', 'Facilities', 'Contact']
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -39,7 +39,7 @@ export default function Navbar({ locale, page }) {
       <div className="navbar__inner">
         <a href={home} className="navbar__brand" onClick={close}>
           <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="navbar__logo" />
-          <span>Respect Football Project</span>
+          <span>CD Respect</span>
         </a>
 
         <button
@@ -58,12 +58,19 @@ export default function Navbar({ locale, page }) {
           <a href={`${home}#senior`} onClick={close}>{labels[0]}</a>
           <a href={`${home}#academy`} onClick={close}>{labels[1]}</a>
           <a href={`${home}#international`} onClick={close}>{labels[2]}</a>
-          <a href={`${home}#news`} onClick={close}>{labels[3]}</a>
-          <a href={`${home}#socios`} onClick={close}>{labels[4]}</a>
-          <a href={`${home}#partners`} onClick={close}>{labels[5]}</a>
-          <a href={`${home}#merch`} onClick={close}>{labels[6]}</a>
-          <a href={`${home}#careers`} onClick={close}>{labels[7]}</a>
-          <a href={`${home}#${locale === 'ru' ? 'contacts' : 'contact'}`} className="navbar__ig" onClick={close}>{labels[8]}</a>
+          <a href={`${home}#matches`} onClick={close}>{labels[3]}</a>
+          <a href={`${home}#news`} onClick={close}>{labels[4]}</a>
+          <a href={`${home}#socios`} onClick={close}>{labels[5]}</a>
+          <details className="navbar__more">
+            <summary>{labels[6]}</summary>
+            <div className="navbar__more-menu">
+              <a href={`${home}#partners`} onClick={close}>{labels[7]}</a>
+              <a href={`${home}#merch`} onClick={close}>{labels[8]}</a>
+              <a href={`${home}#careers`} onClick={close}>{labels[9]}</a>
+              <a href={`${home}#facilities`} onClick={close}>{labels[10]}</a>
+              <a href={`${home}#${locale === 'ru' ? 'contacts' : 'contact'}`} onClick={close}>{labels[11]}</a>
+            </div>
+          </details>
           <div className="navbar__languages" aria-label="Language selector">
             {LOCALES.map((code) => (
               <a key={code} href={PAGE_PATHS[page][code]} className={`navbar__lang ${locale === code ? 'is-active' : ''}`} onClick={close} hrefLang={code} lang={code} aria-current={locale === code ? 'page' : undefined}>{code.toUpperCase()}</a>

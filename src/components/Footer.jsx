@@ -11,7 +11,7 @@ export default function Footer({ locale }) {
         <div className="footer__brand">
           <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="footer__logo" />
           <div>
-            <p className="footer__name">Respect Football Project</p>
+            <p className="footer__name">CD Respect</p>
             <p className="footer__tagline">{t.tagline}</p>
           </div>
         </div>

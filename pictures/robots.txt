@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dianaaba.github.io/respect/sitemap.xml
+Sitemap: https://poetic-youtiao-dfd1bf.netlify.app/sitemap.xml

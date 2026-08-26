@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   publicDir: 'pictures',
-  base: '/respect/',
   build: {
     rollupOptions: {
       input: {

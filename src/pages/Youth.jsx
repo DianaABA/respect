@@ -1,8 +1,10 @@
+import { asset } from '../lib/asset.js'
+
 export default function Youth() {
   return (
     <main>
       <section className="hero hero--youth">
-        <img src="/youth.png" alt="Jugador de la cantera de CD Respect" className="hero__image" />
+        <img src={asset('youth.png')} alt="Jugador de la cantera de CD Respect" className="hero__image" />
         <div className="hero__overlay" />
         <div className="hero__content">
           <span className="eyebrow eyebrow--light">Cantera</span>
@@ -26,13 +28,13 @@ export default function Youth() {
         <div className="section__inner">
           <div className="gallery-grid">
             <div className="gallery-item gallery-item--tall">
-              <img src="/youth.png" alt="Jugador de la cantera controlando el balón" />
+              <img src={asset('youth.png')} alt="Jugador de la cantera controlando el balón" />
             </div>
             <div className="gallery-item">
-              <img src="/youth_2.png" alt="Jugador de la cantera en acción" />
+              <img src={asset('youth_2.png')} alt="Jugador de la cantera en acción" />
             </div>
             <div className="gallery-item">
-              <img src="/respect_1.jpeg" alt="Equipo alevín de CD Respect, campeones de liga 2025-2026" />
+              <img src={asset('respect_1.jpeg')} alt="Equipo alevín de CD Respect, campeones de liga 2025-2026" />
             </div>
           </div>
         </div>

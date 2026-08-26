@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dianaaba.github.io/respect/sitemap.xml

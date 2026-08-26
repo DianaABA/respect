@@ -1,11 +1,13 @@
+import { asset } from '../lib/asset.js'
+
 export default function Home() {
   return (
     <main>
       <section className="hero">
         <video
           className="hero__video"
-          src="/stadium.mp4"
-          poster="/stadium.png"
+          src={asset('stadium.mp4')}
+          poster={asset('stadium.png')}
           autoPlay
           muted
           loop
@@ -13,7 +15,7 @@ export default function Home() {
         />
         <div className="hero__overlay" />
         <div className="hero__content">
-          <img src="/logo.jpeg" alt="Escudo CD Respect" className="hero__logo" />
+          <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="hero__logo" />
           <h1>CD Respect</h1>
           <p className="hero__sub">Club Deportivo Respect</p>
           <p className="hero__meta">Fundado en 2024 &middot; El Fraile, Tenerife</p>
@@ -60,7 +62,7 @@ export default function Home() {
       <section id="juvenil" className="section section--split">
         <div className="section__inner section__inner--split">
           <div className="split__image">
-            <img src="/respect_1.jpeg" alt="Equipo alevín de CD Respect con la directiva, campeones de la Liga Alevín Preferente 2025-2026" />
+            <img src={asset('respect_1.jpeg')} alt="Equipo alevín de CD Respect con la directiva, campeones de la Liga Alevín Preferente 2025-2026" />
           </div>
           <div className="split__text">
             <span className="eyebrow">Juvenil</span>
@@ -70,7 +72,7 @@ export default function Home() {
               juvenil. En la temporada 2025-2026 el equipo alevín se proclamó campeón de
               la Liga Alevín Preferente, junto a la directiva y el cuerpo técnico del club.
             </p>
-            <a className="btn btn--gold" href="/cantera">
+            <a className="btn btn--gold" href={`${import.meta.env.BASE_URL}cantera/`}>
               Ver cantera
             </a>
           </div>
@@ -80,7 +82,7 @@ export default function Home() {
       <section id="primer-equipo" className="section section--split section--split-reverse section--dark">
         <div className="section__inner section__inner--split">
           <div className="split__image">
-            <img src="/stadium.png" alt="Estadio de CD Respect" />
+            <img src={asset('stadium.png')} alt="Estadio de CD Respect" />
           </div>
           <div className="split__text">
             <span className="eyebrow">Primer equipo</span>
@@ -94,10 +96,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="academia" className="section section--wave">
+      <section id="academia" className="section section--wave" style={{ backgroundImage: `url(${asset('stadium_waves.png')})` }}>
         <div className="section__inner section__inner--split">
           <div className="split__image">
-            <img src="/youth_2.png" alt="Jugador entrenando en la Academia Internacional de CD Respect" />
+            <img src={asset('youth_2.png')} alt="Jugador entrenando en la Academia Internacional de CD Respect" />
           </div>
           <div className="split__text">
             <span className="eyebrow eyebrow--light">Academia internacional</span>

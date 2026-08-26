@@ -1,9 +1,11 @@
+import { asset } from '../lib/asset.js'
+
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__brand">
-          <img src="/logo.jpeg" alt="Escudo CD Respect" className="footer__logo" />
+          <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="footer__logo" />
           <div>
             <p className="footer__name">CD Respect</p>
             <p className="footer__tagline">Club Deportivo Respect. Fundado en 2024.</p>

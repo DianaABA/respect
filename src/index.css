@@ -269,7 +269,10 @@ p {
 }
 
 .section--wave {
-  background: var(--navy-950) url('/stadium_waves.png') center / cover no-repeat;
+  background-color: var(--navy-950);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 

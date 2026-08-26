@@ -16,21 +16,44 @@ export default function Home() {
       return
     }
 
+    let cancelled = false
     video.muted = true
-    const attemptPlay = () => video.play().catch(() => {})
+
+    const attemptPlay = () => {
+      const playPromise = video.play()
+      if (playPromise) playPromise.catch(() => {})
+    }
+
     attemptPlay()
 
-    const onInteract = () => {
-      if (video.paused) attemptPlay()
-      window.removeEventListener('pointerdown', onInteract)
-      window.removeEventListener('touchstart', onInteract)
+    // Retry on every signal that could mean the first attempt didn't take:
+    // more data became available, a user gesture happened, the tab came
+    // back into focus, or the browser paused it for some other reason.
+    const onRetry = () => {
+      if (!cancelled && video.paused) attemptPlay()
     }
-    window.addEventListener('pointerdown', onInteract, { once: true })
-    window.addEventListener('touchstart', onInteract, { once: true })
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') onRetry()
+    }
+
+    video.addEventListener('canplay', onRetry)
+    video.addEventListener('loadeddata', onRetry)
+    video.addEventListener('pause', onRetry)
+    document.addEventListener('visibilitychange', onVisibility)
+    window.addEventListener('pointerdown', onRetry)
+    window.addEventListener('touchstart', onRetry)
+
+    const retryTimers = [300, 1000, 3000].map((delay) => setTimeout(onRetry, delay))
 
     return () => {
-      window.removeEventListener('pointerdown', onInteract)
-      window.removeEventListener('touchstart', onInteract)
+      cancelled = true
+      video.removeEventListener('canplay', onRetry)
+      video.removeEventListener('loadeddata', onRetry)
+      video.removeEventListener('pause', onRetry)
+      document.removeEventListener('visibilitychange', onVisibility)
+      window.removeEventListener('pointerdown', onRetry)
+      window.removeEventListener('touchstart', onRetry)
+      retryTimers.forEach(clearTimeout)
     }
   }, [])
 

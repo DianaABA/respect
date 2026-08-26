@@ -1,0 +1,15 @@
+{
+  "name": "CD Respect",
+  "short_name": "CD Respect",
+  "description": "Club Deportivo Respect, El Fraile, Tenerife",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#020c18",
+  "theme_color": "#041c32",
+  "lang": "es",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

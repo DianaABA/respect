@@ -5,7 +5,7 @@ export default function Youth() {
   return (
     <main>
       <section className="hero hero--youth">
-        <img src={asset('youth.png')} alt="Jugador de la cantera de CD Respect" className="hero__image" />
+        <img src={asset('youth.webp')} alt="Jugador de la cantera de CD Respect" className="hero__image" width="1456" height="816" />
         <div className="hero__overlay" />
         <div className="hero__content">
           <span className="eyebrow eyebrow--light">Cantera</span>
@@ -29,13 +29,13 @@ export default function Youth() {
         <div className="section__inner">
           <div className="gallery-grid">
             <div className="gallery-item gallery-item--tall">
-              <img src={asset('youth.png')} alt="Jugador de la cantera controlando el balón" loading="lazy" />
+              <img src={asset('youth.webp')} alt="Jugador de la cantera controlando el balón" loading="lazy" width="1456" height="816" />
             </div>
             <div className="gallery-item">
-              <img src={asset('youth_2.png')} alt="Jugador de la cantera en acción" loading="lazy" />
+              <img src={asset('youth_2.webp')} alt="Jugador de la cantera en acción" loading="lazy" width="1456" height="816" />
             </div>
             <div className="gallery-item">
-              <img src={asset('respect_1.jpeg')} alt="Equipo alevín de CD Respect, campeones de liga 2025-2026" loading="lazy" />
+              <img src={asset('respect_1.webp')} alt="Equipo alevín de CD Respect, campeones de liga 2025-2026" loading="lazy" width="1260" height="948" />
             </div>
           </div>
         </div>

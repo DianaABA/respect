@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { asset } from '../lib/asset.js'
-import { PAGE_PATHS, otherLocale } from '../lib/i18n.js'
+import { LOCALES, PAGE_PATHS } from '../lib/i18n.js'
 import { translations } from '../content/translations.js'
 
 export default function Navbar({ locale, page }) {
@@ -8,14 +8,29 @@ export default function Navbar({ locale, page }) {
   const [scrolled, setScrolled] = useState(false)
   const t = translations[locale].nav
   const home = PAGE_PATHS.home[locale]
-  const other = otherLocale(locale)
-  const switchHref = PAGE_PATHS[page][other]
+  const labels = locale === 'ru'
+    ? ['Senior Team', 'Academy Base', 'International Academy', 'Новости', 'Socios', 'Партнёры', 'Merch', 'Карьера', 'Контакты']
+    : locale === 'es'
+      ? ['Senior Team', 'Academy Base', 'International Academy', 'Noticias', 'Socios', 'Socios comerciales', 'Merch', 'Empleo', 'Contacto']
+      : ['Senior Team', 'Academy Base', 'International Academy', 'News', 'Socios', 'Partners', 'Merch', 'Careers', 'Contact']
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    document.body.classList.toggle('menu-open', open)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.classList.remove('menu-open')
+    }
+  }, [open])
 
   const close = () => setOpen(false)
 
@@ -24,13 +39,14 @@ export default function Navbar({ locale, page }) {
       <div className="navbar__inner">
         <a href={home} className="navbar__brand" onClick={close}>
           <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="navbar__logo" />
-          <span>CD Respect</span>
+          <span>Respect Football Project</span>
         </a>
 
         <button
           className={`navbar__toggle ${open ? 'is-open' : ''}`}
           aria-label={t.openMenu}
           aria-expanded={open}
+          aria-controls="primary-navigation"
           onClick={() => setOpen((v) => !v)}
         >
           <span></span>
@@ -38,24 +54,21 @@ export default function Navbar({ locale, page }) {
           <span></span>
         </button>
 
-        <nav className={`navbar__links ${open ? 'is-open' : ''}`}>
-          <a href={`${home}#info`} onClick={close}>{t.info}</a>
-          <a href={`${home}#juvenil`} onClick={close}>{t.juvenil}</a>
-          <a href={`${home}#primer-equipo`} onClick={close}>{t.adultos}</a>
-          <a href={`${home}#academia`} onClick={close}>{t.academia}</a>
-          <a href={PAGE_PATHS.youth[locale]} onClick={close}>{t.cantera}</a>
-          <a
-            href="https://www.instagram.com/cd_respect"
-            target="_blank"
-            rel="noreferrer"
-            className="navbar__ig"
-            onClick={close}
-          >
-            {t.instagram}
-          </a>
-          <a href={switchHref} className="navbar__lang" onClick={close} hrefLang={other}>
-            {t.switchLabel}
-          </a>
+        <nav id="primary-navigation" aria-label="Primary navigation" className={`navbar__links ${open ? 'is-open' : ''}`}>
+          <a href={`${home}#senior`} onClick={close}>{labels[0]}</a>
+          <a href={`${home}#academy`} onClick={close}>{labels[1]}</a>
+          <a href={`${home}#international`} onClick={close}>{labels[2]}</a>
+          <a href={`${home}#news`} onClick={close}>{labels[3]}</a>
+          <a href={`${home}#socios`} onClick={close}>{labels[4]}</a>
+          <a href={`${home}#partners`} onClick={close}>{labels[5]}</a>
+          <a href={`${home}#merch`} onClick={close}>{labels[6]}</a>
+          <a href={`${home}#careers`} onClick={close}>{labels[7]}</a>
+          <a href={`${home}#${locale === 'ru' ? 'contacts' : 'contact'}`} className="navbar__ig" onClick={close}>{labels[8]}</a>
+          <div className="navbar__languages" aria-label="Language selector">
+            {LOCALES.map((code) => (
+              <a key={code} href={PAGE_PATHS[page][code]} className={`navbar__lang ${locale === code ? 'is-active' : ''}`} onClick={close} hrefLang={code} lang={code} aria-current={locale === code ? 'page' : undefined}>{code.toUpperCase()}</a>
+            ))}
+          </div>
         </nav>
       </div>
     </header>

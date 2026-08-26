@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --navy-950: #020c18;
@@ -12,7 +12,11 @@
   --off-white: #dfe6ee;
 
   --font-display: 'Bebas Neue', 'Inter', sans-serif;
+  --font-script: 'Dancing Script', cursive;
   --font-body: 'Inter', system-ui, sans-serif;
+
+  --shadow-sm: 0 10px 30px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-sm-hover: 0 18px 40px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 * {
@@ -70,12 +74,13 @@ p {
 
 .eyebrow {
   display: inline-block;
-  font-family: var(--font-display);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  font-family: var(--font-script);
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--gold-300);
-  font-size: 0.85rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.7rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
 }
 
 .eyebrow--light {
@@ -246,11 +251,12 @@ p {
 }
 
 .hero__sub {
-  font-size: 1.2rem;
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
   color: var(--gold-300);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.35em;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.15em;
 }
 
 .hero__meta {
@@ -329,16 +335,18 @@ p {
 }
 
 .info-card {
-  background: var(--navy-800);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 60%), var(--navy-800);
   border: 1px solid rgba(184, 146, 60, 0.25);
   border-radius: 14px;
   padding: 1.75rem 1.5rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .info-card:hover {
   border-color: rgba(184, 146, 60, 0.6);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-sm-hover);
 }
 
 .info-card__label {
@@ -374,6 +382,12 @@ p {
   border-radius: 18px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(184, 146, 60, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.split__image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
 }
 
 .split__image img {
@@ -407,6 +421,13 @@ p {
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid rgba(184, 146, 60, 0.25);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm-hover);
 }
 
 .gallery-item img {

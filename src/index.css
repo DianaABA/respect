@@ -44,6 +44,13 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold-300);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 h1,
 h2,
 h3 {
@@ -131,6 +138,7 @@ p {
   color: var(--off-white);
   position: relative;
   padding: 0.25rem 0;
+  transition: color 0.2s ease;
 }
 
 .navbar__links a:hover {
@@ -142,6 +150,7 @@ p {
   border: 1px solid var(--gold-500);
   padding: 0.4rem 0.9rem !important;
   border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .navbar__ig:hover {
@@ -314,7 +323,7 @@ p {
 /* Info grid */
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   margin-top: 2.5rem;
 }
@@ -324,6 +333,12 @@ p {
   border: 1px solid rgba(184, 146, 60, 0.25);
   border-radius: 14px;
   padding: 1.75rem 1.5rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.info-card:hover {
+  border-color: rgba(184, 146, 60, 0.6);
+  transform: translateY(-3px);
 }
 
 .info-card__label {
@@ -354,10 +369,19 @@ p {
   align-items: center;
 }
 
-.split__image img {
+.split__image {
+  overflow: hidden;
   border-radius: 18px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(184, 146, 60, 0.3);
+}
+
+.split__image img {
+  transition: transform 0.5s ease;
+}
+
+.split__image:hover img {
+  transform: scale(1.04);
 }
 
 @media (min-width: 861px) {
@@ -408,6 +432,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.03em;
   margin-top: 1rem;
+  transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn--gold {
@@ -417,6 +442,13 @@ p {
 
 .btn--gold:hover {
   filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 146, 60, 0.35);
+}
+
+.btn--gold:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* Footer */
@@ -509,7 +541,7 @@ p {
   }
 
   .navbar__links.is-open {
-    max-height: 320px;
+    max-height: 400px;
   }
 
   .navbar__links a {
@@ -527,6 +559,10 @@ p {
   .section__inner--split {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer__inner {
@@ -572,5 +608,9 @@ p {
 
   .gallery-item--tall {
     grid-row: span 1;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
   }
 }

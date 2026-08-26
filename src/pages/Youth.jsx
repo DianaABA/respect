@@ -28,13 +28,13 @@ export default function Youth() {
         <div className="section__inner">
           <div className="gallery-grid">
             <div className="gallery-item gallery-item--tall">
-              <img src={asset('youth.png')} alt="Jugador de la cantera controlando el balón" />
+              <img src={asset('youth.png')} alt="Jugador de la cantera controlando el balón" loading="lazy" />
             </div>
             <div className="gallery-item">
-              <img src={asset('youth_2.png')} alt="Jugador de la cantera en acción" />
+              <img src={asset('youth_2.png')} alt="Jugador de la cantera en acción" loading="lazy" />
             </div>
             <div className="gallery-item">
-              <img src={asset('respect_1.jpeg')} alt="Equipo alevín de CD Respect, campeones de liga 2025-2026" />
+              <img src={asset('respect_1.jpeg')} alt="Equipo alevín de CD Respect, campeones de liga 2025-2026" loading="lazy" />
             </div>
           </div>
         </div>

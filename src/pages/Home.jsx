@@ -62,7 +62,7 @@ export default function Home() {
       <section id="juvenil" className="section section--split">
         <div className="section__inner section__inner--split">
           <div className="split__image">
-            <img src={asset('respect_1.jpeg')} alt="Equipo alevín de CD Respect con la directiva, campeones de la Liga Alevín Preferente 2025-2026" />
+            <img src={asset('respect_1.jpeg')} alt="Equipo alevín de CD Respect con la directiva, campeones de la Liga Alevín Preferente 2025-2026" loading="lazy" />
           </div>
           <div className="split__text">
             <span className="eyebrow">Juvenil</span>
@@ -82,7 +82,7 @@ export default function Home() {
       <section id="primer-equipo" className="section section--split section--split-reverse section--dark">
         <div className="section__inner section__inner--split">
           <div className="split__image">
-            <img src={asset('stadium.png')} alt="Estadio de CD Respect" />
+            <img src={asset('stadium.png')} alt="Estadio de CD Respect" loading="lazy" />
           </div>
           <div className="split__text">
             <span className="eyebrow">Primer equipo</span>
@@ -99,7 +99,7 @@ export default function Home() {
       <section id="academia" className="section section--wave" style={{ backgroundImage: `url(${asset('stadium_waves.png')})` }}>
         <div className="section__inner section__inner--split">
           <div className="split__image">
-            <img src={asset('youth_2.png')} alt="Jugador entrenando en la Academia Internacional de CD Respect" />
+            <img src={asset('youth_2.png')} alt="Jugador entrenando en la Academia Internacional de CD Respect" loading="lazy" />
           </div>
           <div className="split__text">
             <span className="eyebrow eyebrow--light">Academia internacional</span>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&display=swap');
 
 :root {
   --navy-950: #020c18;
@@ -957,3 +957,153 @@ body.menu-open{overflow:hidden}.section__inner{width:min(100%,1200px)}.client-br
 .match-source{display:inline-flex;align-items:center;gap:.45rem;margin-top:auto;color:var(--gold);font-weight:800;text-decoration:none}
 .match-source:hover{text-decoration:underline;text-underline-offset:.25em}
 .match-card .score{font-size:clamp(1.45rem,2.5vw,2.3rem);line-height:1.05;overflow-wrap:anywhere}
+
+/* ============================================================
+   AAA polish pass: type, card elevation, gold refinement, grain
+   ============================================================ */
+:root {
+  --gold: var(--gold-500);
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+/* Grain: a barely-there film texture so flat navy/cream fields read as
+   material rather than a flat digital fill. Fixed + pointer-events:none
+   so it never interferes with layout or interaction. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Serif italic accent for manifesto-style statements: pairs a warm,
+   considered serif against the condensed sans used everywhere else,
+   the classic bold-display + editorial-serif premium pairing. */
+.client-brief .gold-statement,
+.client-brief .brief-manifesto h3,
+.client-brief .challenge blockquote,
+.client-brief .education-block blockquote,
+.client-brief .vision h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Card elevation: dark box-shadows are invisible against the near-black
+   backgrounds these cards sit on, so elevation comes from a bright inset
+   edge (a glass-like top highlight) at rest and a warm gold ring + glow
+   on hover — colour contrast instead of a shadow that just vanishes
+   into the navy. */
+.client-brief .achievement-cards article,
+.client-brief .achievement-columns article,
+.client-brief .principle-grid > div,
+.client-brief .membership-grid article,
+.client-brief .facility-cards article,
+.client-brief .season-grid article,
+.client-brief .next-match,
+.client-brief .match-card {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 55%);
+  transition: transform 0.22s var(--ease-premium), box-shadow 0.22s var(--ease-premium);
+}
+
+.client-brief .achievement-cards article:hover,
+.client-brief .achievement-columns article:hover,
+.client-brief .membership-grid article:hover,
+.client-brief .facility-cards article:hover,
+.client-brief .season-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: inset 0 0 0 1px rgba(184, 146, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 20px 40px -18px rgba(184, 146, 60, 0.45);
+}
+
+.client-brief .membership-gold {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 20px 46px -14px rgba(154, 118, 46, 0.55);
+}
+
+.client-brief .contact-options a,
+.client-brief .career-roles a {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s var(--ease-premium), box-shadow 0.2s var(--ease-premium), background 0.25s ease, color 0.25s ease;
+}
+
+.client-brief .contact-options a:hover,
+.client-brief .career-roles a:hover {
+  transform: translateY(-3px);
+  box-shadow: inset 0 0 0 1px rgba(184, 146, 60, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 16px 32px -14px rgba(184, 146, 60, 0.4);
+}
+
+/* Feature cards (Academy training process, International Academy) sit
+   on cream sections, so a real dark shadow reads fine and needs no
+   glass/glow treatment. */
+.client-brief .feature-grid article {
+  box-shadow: 0 10px 26px -12px rgba(7, 24, 39, 0.16);
+  transition: transform 0.22s var(--ease-premium), box-shadow 0.22s var(--ease-premium);
+}
+
+.client-brief .feature-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px -14px rgba(7, 24, 39, 0.24);
+}
+
+/* Gold gets a touch more richness: a subtle highlight sweep instead
+   of a flat two-stop gradient, on the surfaces that are solid gold. */
+.client-brief .membership-gold,
+.client-brief .success-measure {
+  background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 45%);
+  background-blend-mode: soft-light;
+}
+
+@media (max-width: 700px) {
+  .client-brief .achievement-cards article:hover,
+  .client-brief .achievement-columns article:hover,
+  .client-brief .feature-grid article:hover,
+  .client-brief .membership-grid article:hover,
+  .client-brief .facility-cards article:hover,
+  .client-brief .season-grid article:hover,
+  .client-brief .contact-options a:hover,
+  .client-brief .career-roles a:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-brief .achievement-cards article,
+  .client-brief .achievement-columns article,
+  .client-brief .feature-grid article,
+  .client-brief .membership-grid article,
+  .client-brief .facility-cards article,
+  .client-brief .season-grid article,
+  .client-brief .contact-options a,
+  .client-brief .career-roles a {
+    transition: none;
+  }
+}
+
+/* Match Centre stadium artwork */
+.client-brief .match-centre{background-color:#03101c;background-image:linear-gradient(180deg,rgba(3,16,28,.72) 0%,rgba(3,16,28,.94) 48%,#03101c 100%),url('/footbal_pitch.png');background-position:center top;background-size:cover;background-repeat:no-repeat}
+.client-brief .match-centre .match-card{background:rgba(6,29,46,.88);border-color:rgba(255,255,255,.16);box-shadow:0 18px 50px rgba(0,0,0,.24);backdrop-filter:blur(8px)}
+@media(max-width:700px){.client-brief .match-centre{background-position:center top;background-size:auto 520px}.client-brief .match-centre .match-card{backdrop-filter:none}}
+
+/* Merch accessories artwork */
+.merch-grid article:nth-child(3) .merch-product{font-size:0;color:transparent;background:#020609 url('/accesories.png') center/cover no-repeat}
+.merch-grid article:nth-child(3) .merch-product::after{display:none}
+@media(max-width:700px){.merch-grid article:nth-child(3) .merch-product{height:auto;aspect-ratio:16/9;background-position:center}}
+
+/* Live Google Maps for training bases */
+.facility-cards .facility-map,.facility-cards article:first-child .facility-map{position:relative;height:auto;aspect-ratio:16/9;margin-bottom:2rem;padding:0;overflow:hidden;background:#d8d4ca}
+.facility-cards article:first-child .facility-map::before{display:none}
+.facility-cards .facility-map iframe{display:block;width:100%;height:100%;border:0;filter:saturate(.82) contrast(1.04)}
+@media(max-width:700px){.facility-cards .facility-map,.facility-cards article:first-child .facility-map{height:auto;aspect-ratio:16/10}}
+
+/* Tenerife identity artwork in the contact conversion section */
+.client-brief .contact-section{position:relative;isolation:isolate;background-color:#071827;background-image:linear-gradient(90deg,rgba(2,12,24,.96) 0%,rgba(2,12,24,.82) 48%,rgba(2,12,24,.9) 100%),url('/ball_tenerife_rocks.png');background-position:center;background-size:cover;background-repeat:no-repeat}
+.client-brief .contact-section::before{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(2,12,24,.18),rgba(2,12,24,.72))}
+.client-brief .contact-section .contact-options{background:rgba(3,16,28,.56);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}
+.client-brief .contact-section .contact-options a{background:rgba(3,16,28,.5)}
+@media(max-width:700px){.client-brief .contact-section{background-position:58% center}.client-brief .contact-section .contact-options{backdrop-filter:none}}

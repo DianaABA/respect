@@ -68,7 +68,6 @@ export default function Navbar({ locale, page }) {
               <a href={`${home}#merch`} onClick={close}>{labels[8]}</a>
               <a href={`${home}#careers`} onClick={close}>{labels[9]}</a>
               <a href={`${home}#facilities`} onClick={close}>{labels[10]}</a>
-              <a href={`${home}#${locale === 'ru' ? 'contacts' : 'contact'}`} onClick={close}>{labels[11]}</a>
             </div>
           </details>
           <div className="navbar__languages" aria-label="Language selector">

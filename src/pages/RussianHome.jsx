@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { asset } from '../lib/asset.js'
-import { PAGE_PATHS } from '../lib/i18n.js'
 import { OpportunityStories, ProgrammeStories } from '../components/ProgrammeStories.jsx'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
@@ -17,7 +16,7 @@ export default function RussianHome() {
     <section className="hero hero--project" id="home">
       <video ref={videoRef} className="hero__video" poster={asset('adult_team.jpeg')} autoPlay muted loop playsInline preload="metadata"><source src={asset('stadium_optimized.mp4')} type="video/mp4" /></video>
       <div className="hero__overlay" />
-      <div className="hero-project__content"><p className="hero-project__kicker">Тенерифе, Испания</p><h1 className="brand-line">CD RESPECT</h1><p className="hero-project__intro">Respect Football Project — это современная футбольная экосистема на Тенерифе, объединяющая детскую академию, взрослую команду и международную программу подготовки игроков.</p><p className="hero-project__intro">Мы создаём среду, в которой талант получает возможность превратиться в профессиональную карьеру.</p><div className="button-row"><a className="btn btn--gold" href="https://wa.me/34677711454">Присоединиться <Arrow /></a><a className="btn btn--outline" href={PAGE_PATHS.about.ru}>О проекте</a></div><p className="hero-project__slogan">Развиваем. Соревнуемся. Прогрессируем.</p></div>
+      <div className="hero-project__content"><p className="hero-project__kicker">Тенерифе, Испания</p><h1 className="brand-line">CD RESPECT</h1><p className="hero-project__intro">Respect Football Project — это современная футбольная экосистема на Тенерифе, объединяющая детскую академию, взрослую команду и международную программу подготовки игроков.</p><p className="hero-project__intro">Мы создаём среду, в которой талант получает возможность превратиться в профессиональную карьеру.</p><p className="hero-project__slogan">Развиваем. Соревнуемся. Прогрессируем.</p></div>
     </section>
 
     <section className="brief-intro"><div className="section__inner"><p>Это не просто футбольная школа.</p><h2>Это полноценная система развития игрока: от первых шагов в футболе до взрослой команды, международного образования и профессиональных возможностей.</h2></div></section>
@@ -92,4 +91,4 @@ function Partners() { return <section className="section partners-full" id="part
 
 function Facilities() { const bases=[['Campo Municipal de Fútbol Dionisio González','Campo Municipal de Fútbol Dionisio González, El Fraile, Arona, Tenerife'],['Los Cristianos','Los Cristianos, Arona, Tenerife']]; return <section className="section section--cream" id="facilities"><div className="section__inner"><SectionTitle kicker="ТРЕНИРОВОЧНЫЕ ОБЪЕКТЫ" title="Наши базы на Тенерифе" /><div className="facility-cards">{bases.map((x,i)=><article key={x[0]}><div className="facility-map"><iframe src={`https://maps.google.com/maps?q=${encodeURIComponent(x[1])}&z=15&output=embed`} title={`${x[0]} · Google Maps`} loading="eager" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/></div><a className="map-fallback" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[1])}`} target="_blank" rel="noreferrer">Открыть в Google Maps <Arrow /></a><p>{i?'Дополнительная база':'Основная база'}</p><h3>{x[0]}</h3><span>{i?'Arona, Tenerife':'El Fraile, Arona, Tenerife'}</span></article>)}</div></div></section> }
 
-function Values() { return <section className="section section--cream" id="values"><div className="section__inner"><SectionTitle kicker="RESPECT" title="Что определяет каждое наше решение." /><div className="values-grid">{['Уважение', 'Амбиции', 'Дисциплина', 'Интеллект', 'Развитие', 'Возможности'].map((x, i) => <div className="value" key={x}><span>0{i + 1}</span><strong>{x}</strong></div>)}</div></div></section> }
+function Values() { return <section className="section section--cream" id="values"><div className="section__inner"><SectionTitle kicker="RESPECT" title="Что определяет каждое наше решение." /><div className="values-grid">{['Уважение', 'Амбиции', 'Дисциплина', 'Интеллект', 'Развитие', 'Возможности'].map((x) => <div className="value" key={x}><strong>{x}</strong></div>)}</div></div></section> }

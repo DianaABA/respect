@@ -184,7 +184,7 @@ function SectionTitle({ kicker, title }) {
         <h2>{title}</h2>
       </div>
       {image && (
-        <figure className="academy-editorial-image">
+        <figure className={`academy-editorial-image${methods ? " academy-methodology-image" : ""}`}>
           <img src={asset(image[0])} alt={image[1]} loading="lazy" />
           <figcaption>{image[2]}</figcaption>
         </figure>

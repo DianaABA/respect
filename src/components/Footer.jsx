@@ -24,7 +24,7 @@ export default function Footer({ locale }) {
 
         <div className="footer__col">
           <p className="footer__heading">{t.contacto}</p>
-          <a href="tel:+34677711454">+34 677 71 14 54</a>
+          <a href="tel:+34648294070">+34 648 29 40 70</a>
           <a href="mailto:cdrespect.es@gmail.com">cdrespect.es@gmail.com</a>
           <a href="https://www.instagram.com/cd_respect" target="_blank" rel="noreferrer">
             Instagram: @cd_respect

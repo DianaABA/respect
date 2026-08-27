@@ -158,6 +158,7 @@ export default function RussianHome() {
 }
 
 function SectionTitle({ kicker, title }) {
+  const methods = title === "Наша методология";
   const image =
     title === "Наш путь"
       ? [

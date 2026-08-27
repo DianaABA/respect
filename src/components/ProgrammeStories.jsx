@@ -14,6 +14,6 @@ export function ProgrammeStories({ items, locale = 'en' }) {
 
 export function OpportunityStories({ items }) {
   const groups = [items.slice(0, 3), items.slice(3)]
-  const images = ['sga_tenerife_02.png', 'sga_tenerife_03.png']
-  return <div className="opportunity-stories opportunity-stories--official">{groups.map((group, i) => <article key={i}><figure><a href="https://www.stevengerrardacademy.com/tenerife" target="_blank" rel="noreferrer"><img src={asset(images[i])} alt={`Steven Gerrard Academy Tenerife · ${i + 1}`} loading="lazy" decoding="async"/></a><figcaption>Steven Gerrard Academy</figcaption></figure><div>{group.map(item => <p key={item}>{item.replace(/;\s*$/, '')}</p>)}</div></article>)}</div>
+  const images = ['real_5.jpeg', 'real_6.jpeg']
+  return <div className="opportunity-stories">{groups.map((group, i) => <article key={i}><figure><img src={asset(images[i])} alt="Respect Football Project" loading="lazy" decoding="async"/><span aria-hidden="true">0{i + 1}</span></figure><div>{group.map(item => <p key={item}>{item.replace(/;\s*$/, '')}</p>)}</div></article>)}</div>
 }

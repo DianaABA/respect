@@ -1117,7 +1117,6 @@ body::before {
 @media(max-width:700px){.client-brief .careers-section{background-position:48% center}.client-brief .careers-section .career-roles,.client-brief .education-block>div,.client-brief .education-block>blockquote{backdrop-filter:none}.client-brief .education-block{background-position:56% center}}
 
 /* Public verified news feed replaces the internal category placeholder */
-.news-section{display:none}
 .verified-news{background:#071827}
 .verified-news__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .verified-news .news-card{display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);min-height:330px;border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden}

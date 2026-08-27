@@ -51,7 +51,7 @@ export default function YouTubeShowcase({ locale = "en" }) {
             <div className="youtube-showcase__video" key={video.id}>
               {activeVideo === video.id ? (
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`}
+                  src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&mute=1&playsinline=1&rel=0`}
                   title={`${copy.frame}: ${video.title}`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"

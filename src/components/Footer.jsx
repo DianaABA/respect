@@ -36,6 +36,7 @@ export default function Footer({ locale }) {
       </div>
       <div className="footer__bottom">
         <span>{t.bottomLine}</span>
+        <a href={PAGE_PATHS.about[locale]}>{t.aboutLink}</a>
         <a href={PAGE_PATHS.privacy[locale]}>{t.privacyLink}</a>
       </div>
     </footer>

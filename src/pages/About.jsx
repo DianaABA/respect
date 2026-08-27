@@ -5,7 +5,7 @@ const Arrow=()=> <span aria-hidden="true">↗</span>
 const List=({items})=> <ul className="brief-list">{items.map(x=><li key={x}>{x}</li>)}</ul>
 const Title=({over,title})=> {
   const philosophy=['Our philosophy','Nuestra filosofía'].includes(title)
-  const image=philosophy?['team_listening.png',title==='Nuestra filosofía'?'Jugadores de Respect escuchando atentamente las instrucciones antes del partido':'Respect players listening attentively to pre-match instructions',`${title} · One Team`]:null
+  const image=philosophy?['real_training.jpeg',title==='Nuestra filosofía'?'Jugadores de Respect escuchando atentamente las instrucciones antes del partido':'Respect players listening attentively to pre-match instructions',`${title} · One Team`]:null
   return <><div className="brief-title"><span className="eyebrow">{over}</span><h2>{title}</h2></div>{image&&<figure className="academy-editorial-image"><img src={asset(image[0])} alt={image[1]} loading="lazy"/><figcaption>{image[2]}</figcaption></figure>}</>
 }
 

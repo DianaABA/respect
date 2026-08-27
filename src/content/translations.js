@@ -80,6 +80,7 @@ export const translations = {
       tagline: 'Club Deportivo Respect. Fundado en 2024.',
       ubicacion: 'Ubicación',
       contacto: 'Contacto',
+      aboutLink: 'Sobre el proyecto',
       privacyLink: 'Privacidad y cookies',
       bottomLine: 'CD Respect, El Fraile, Tenerife',
     },
@@ -172,6 +173,7 @@ export const translations = {
       tagline: 'Respect Football Club. Founded in 2024.',
       ubicacion: 'Location',
       contacto: 'Contact',
+      aboutLink: 'About the Project',
       privacyLink: 'Privacy & cookies',
       bottomLine: 'CD Respect, El Fraile, Tenerife',
     },
@@ -195,7 +197,7 @@ export const translations = {
     youth:{ eyebrow:'Академия', title:'Академия CD Respect', location:'Эль-Фрайле, Тенерифе', sectionTitle:'Развитие с первых шагов', sectionBody:'Академия CD Respect объединяет детские и юношеские команды клуба. Ежедневная работа строится на уважении, дисциплине, развитии и командном духе.', galleryAlt1:'Игрок академии контролирует мяч', galleryAlt2:'Игрок академии в матче', galleryAlt3:'Команда академии CD Respect', heroAlt:'Игрок академии CD Respect', igEyebrow:'Instagram', igBody:'Результаты, тренировки и новости команд публикуются в официальном Instagram клуба.', igCta:'Подписаться в Instagram' },
     privacy:{ eyebrow:'Правовая информация', title:'Политика конфиденциальности и cookies', lead:'CD Respect, расположенный в Эль-Фрайле на Тенерифе, отвечает за работу этого сайта.', h1:'Cookies и локальное хранилище', p1:'Сайт не использует рекламные или отслеживающие cookies. Выбор в уведомлении сохраняется только в локальном хранилище браузера.', h2:'Персональные данные', p2:'Ссылки на социальные сети ведут на сторонние платформы, которые применяют собственные политики конфиденциальности.', h3:'Ваши права', p3:'В соответствии с GDPR вы можете запросить доступ, исправление или удаление данных по адресу cdrespect.es@gmail.com.', h4:'Изменения', p4:'Политика может обновляться при изменении работы сайта.' },
     notFound:{ eyebrow:'404', title:'Страница не найдена', body:'Такой страницы нет или она была перемещена.', cta:'Вернуться на главную' },
-    footer:{ tagline:'Respect Football Project. Тенерифе, Испания.', ubicacion:'Расположение', contacto:'Контакты', privacyLink:'Конфиденциальность и cookies', bottomLine:'Respect Football Project, Тенерифе' },
+    footer:{ tagline:'Respect Football Project. Тенерифе, Испания.', ubicacion:'Расположение', contacto:'Контакты', aboutLink:'О проекте', privacyLink:'Конфиденциальность и cookies', bottomLine:'Respect Football Project, Тенерифе' },
     cookie:{ ariaLabel:'Уведомление о cookies', text:'Сайт не использует отслеживающие cookies. Ваш выбор сохраняется локально в браузере. Подробнее:', linkText:'политика конфиденциальности', reject:'Отклонить', accept:'Принять' }
   },
 }

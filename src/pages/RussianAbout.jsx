@@ -9,7 +9,7 @@ const philosophy = ['развитие собственных игроков;', '
 
 function SectionTitle({ kicker, title }) {
   const image = title === 'Наша философия'
-    ? ['team_listening.png', 'Игроки Respect внимательно слушают установку перед игрой', 'Наша философия · Единая команда']
+    ? ['real_training.jpeg', 'Игроки Respect внимательно слушают установку перед игрой', 'Наша философия · Единая команда']
     : null
   return <><div className="brief-title"><span className="eyebrow">{kicker}</span><h2>{title}</h2></div>{image && <figure className="academy-editorial-image"><img src={asset(image[0])} alt={image[1]} loading="lazy" /><figcaption>{image[2]}</figcaption></figure>}</>
 }

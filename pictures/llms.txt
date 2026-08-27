@@ -1,19 +1,28 @@
 # CD Respect
 
-> Club Deportivo Respect is a football (soccer) club based in El Fraile, Tenerife, Canary Islands, Spain. Founded in 2024. Address: Dionisio Gonzalez, El Fraile, Tenerife. Phone: +34 648 29 40 70. Email: cdrespect.es@gmail.com. Instagram: https://www.instagram.com/cd_respect. Facebook: https://www.facebook.com/cdrespect/
+> CD Respect (Respect Football Project) is a football club based in El Fraile, Tenerife, Canary Islands, Spain. Founded in 2024/2023. Address: Dionisio Gonzalez, El Fraile, Tenerife. Phone: +34 648 29 40 70. Email: cdrespect.es@gmail.com. Instagram: https://www.instagram.com/cd_respect. Facebook: https://www.facebook.com/cdrespect/
 
 ## Pages (Spanish, default)
 
-- [Home](https://poetic-youtiao-dfd1bf.netlify.app/): Club overview, founding info, location, and the three programs: Juvenil (youth academy, alevin to juvenil age groups), Primer equipo (adult senior team), and Academia internacional (international academy open to players and families based in Tenerife).
-- [Cantera](https://poetic-youtiao-dfd1bf.netlify.app/cantera/): Youth academy detail page. The alevin team was champion of the Liga Alevin Preferente 2025-2026 season. Photo gallery and Instagram link.
+- [Home](https://poetic-youtiao-dfd1bf.netlify.app/): Senior Team, Academy Base (grassroots teams from Prebenjamin to Juvenil), International Academy for players aged 14-19, official match calendar, club news, membership (Socio/Socio Gold), merch, careers, partners and training facilities.
+- [Sobre el proyecto](https://poetic-youtiao-dfd1bf.netlify.app/about/): The club's mission, philosophy, objectives and long-term vision.
+- [Cantera](https://poetic-youtiao-dfd1bf.netlify.app/cantera/): Youth academy detail page. Photo gallery and Instagram link.
 - [Privacidad](https://poetic-youtiao-dfd1bf.netlify.app/privacidad/): Privacy and cookie policy.
 
 ## Pages (English)
 
 - [Home](https://poetic-youtiao-dfd1bf.netlify.app/en/): Same content as the Spanish home page, in English.
+- [About the Project](https://poetic-youtiao-dfd1bf.netlify.app/en/about/): Same content as /about/, in English.
 - [Academy](https://poetic-youtiao-dfd1bf.netlify.app/en/youth/): Same content as /cantera/, in English.
 - [Privacy](https://poetic-youtiao-dfd1bf.netlify.app/en/privacy/): Same content as /privacidad/, in English.
 
+## Pages (Russian)
+
+- [Home](https://poetic-youtiao-dfd1bf.netlify.app/ru/): Same content as the Spanish home page, in Russian.
+- [O proekte](https://poetic-youtiao-dfd1bf.netlify.app/ru/about/): Same content as /about/, in Russian.
+- [Akademiya](https://poetic-youtiao-dfd1bf.netlify.app/ru/youth/): Same content as /cantera/, in Russian.
+- [Privacy](https://poetic-youtiao-dfd1bf.netlify.app/ru/privacy/): Same content as /privacidad/, in Russian.
+
 ## Notes
 
-Every page exists in both Spanish (default, at the root paths) and English (under /en/), with hreflang alternate links connecting each pair. A language switcher in the site header links between them. The club's guiding principle is respect: for opponents, referees, teammates, and the shirt. The site sets no tracking cookies; a cookie banner records only the visitor's accept/reject choice in local storage.
+Every page exists in Spanish (default, at the root paths), English (under /en/) and Russian (under /ru/), with hreflang alternate links connecting each set. A language switcher in the site header links between them. The club's guiding principle is respect: for opponents, referees, teammates, and the shirt. The site sets no tracking cookies; a cookie banner records only the visitor's accept/reject choice in local storage.

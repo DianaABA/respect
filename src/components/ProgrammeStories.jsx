@@ -14,5 +14,6 @@ export function ProgrammeStories({ items, locale = 'en' }) {
 
 export function OpportunityStories({ items }) {
   const groups = [items.slice(0, 3), items.slice(3)]
-  return <div className="opportunity-stories">{groups.map((group, i) => <article key={i}><figure><img src={asset(i ? 'youth_2.webp' : 'respect_tenerife.png')} alt="" loading="lazy"/></figure><div>{group.map(item => <p key={item}>{item.replace(/;\s*$/, '')}</p>)}</div></article>)}</div>
+  const images = ['respect_tenerife.png', 'youth_2.webp']
+  return <div className="opportunity-stories">{groups.map((group, i) => <article key={i}><figure><img src={asset(images[i])} alt="" loading="lazy"/></figure><div>{group.map(item => <p key={item}>{item.replace(/;\s*$/, '')}</p>)}</div></article>)}</div>
 }

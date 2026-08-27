@@ -1,94 +1,831 @@
-import { useEffect, useRef } from 'react'
-import { asset } from '../lib/asset.js'
-import { OpportunityStories, ProgrammeStories } from '../components/ProgrammeStories.jsx'
+import { useEffect, useRef } from "react";
+import { asset } from "../lib/asset.js";
+import {
+  OpportunityStories,
+  ProgrammeStories,
+} from "../components/ProgrammeStories.jsx";
 
-const Arrow = () => <span aria-hidden="true">↗</span>
-const BulletList = ({ items, className = '' }) => <ul className={`brief-list ${className}`}>{items.map((item) => <li key={item}>{item.replace(/;\s*$/, '')}</li>)}</ul>
+const Arrow = () => <span aria-hidden="true">↗</span>;
+const BulletList = ({ items, className = "" }) => (
+  <ul className={`brief-list ${className}`}>
+    {items.map((item) => (
+      <li key={item}>{item.replace(/;\s*$/, "")}</li>
+    ))}
+  </ul>
+);
 
-const academyMethod = ['понимать игру;', 'читать игровые ситуации;', 'принимать решения под давлением;', 'создавать пространство;', 'использовать пространство;', 'самостоятельно решать игровые задачи;', 'мыслить быстрее соперника.']
-const training = ['до 5 тренировок в неделю;', 'лицензированные тренеры;', 'официальные соревнования Федерации футбола;', 'индивидуальная работа с игроками;', 'товарищеские матчи против сильных академий;', 'постоянный мониторинг прогресса игроков.']
-const programme = ['проживание;', 'полноценное питание;', 'сопровождение куратора;', 'двухразовые тренировки;', 'участие в официальных соревнованиях;', 'интеграция в испанский футбол;', 'языковая поддержка;', 'медицинское сопровождение;', 'просмотры в профессиональных клубах.']
+const academyMethod = [
+  "понимать игру;",
+  "читать игровые ситуации;",
+  "принимать решения под давлением;",
+  "создавать пространство;",
+  "использовать пространство;",
+  "самостоятельно решать игровые задачи;",
+  "мыслить быстрее соперника.",
+];
+const training = [
+  "до 5 тренировок в неделю;",
+  "лицензированные тренеры;",
+  "официальные соревнования Федерации футбола;",
+  "индивидуальная работа с игроками;",
+  "товарищеские матчи против сильных академий;",
+  "постоянный мониторинг прогресса игроков.",
+];
+const programme = [
+  "проживание;",
+  "полноценное питание;",
+  "сопровождение куратора;",
+  "двухразовые тренировки;",
+  "участие в официальных соревнованиях;",
+  "интеграция в испанский футбол;",
+  "языковая поддержка;",
+  "медицинское сопровождение;",
+  "просмотры в профессиональных клубах.",
+];
 
 export default function RussianHome() {
-  const videoRef = useRef(null)
-  useEffect(() => { const video = videoRef.current; if (video && !matchMedia('(prefers-reduced-motion: reduce)').matches) video.play().catch(() => {}) }, [])
-  return <main className="client-brief">
-    <section className="hero hero--project" id="home">
-      <video ref={videoRef} className="hero__video" poster={asset('adult_team.jpeg')} autoPlay muted loop playsInline preload="metadata"><source src={asset('stadium_optimized.mp4')} type="video/mp4" /></video>
-      <div className="hero__overlay" />
-      <div className="hero-project__content"><p className="hero-project__kicker">Тенерифе, Испания</p><h1 className="brand-line">CD RESPECT</h1><p className="hero-project__intro">Respect Football Project — это современная футбольная экосистема на Тенерифе, объединяющая детскую академию, взрослую команду и международную программу подготовки игроков.</p><p className="hero-project__intro">Мы создаём среду, в которой талант получает возможность превратиться в профессиональную карьеру.</p><p className="hero-project__slogan">Развиваем. Соревнуемся. Прогрессируем.</p></div>
-    </section>
+  const videoRef = useRef(null);
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video && !matchMedia("(prefers-reduced-motion: reduce)").matches)
+      video.play().catch(() => {});
+  }, []);
+  return (
+    <main className="client-brief">
+      <section className="hero hero--project" id="home">
+        <video
+          ref={videoRef}
+          className="hero__video"
+          poster={asset("adult_team.jpeg")}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src={asset("stadium_optimized.mp4")} type="video/mp4" />
+        </video>
+        <div className="hero__overlay" />
+        <div className="hero-project__content">
+          <p className="hero-project__kicker">Тенерифе, Испания</p>
+          <h1 className="brand-line">CD RESPECT</h1>
+          <p className="hero-project__intro">
+            Respect Football Project — это современная футбольная экосистема на
+            Тенерифе, объединяющая детскую академию, взрослую команду и
+            международную программу подготовки игроков.
+          </p>
+          <p className="hero-project__intro">
+            Мы создаём среду, в которой талант получает возможность превратиться
+            в профессиональную карьеру.
+          </p>
+          <p className="hero-project__slogan">
+            Развиваем. Соревнуемся. Прогрессируем.
+          </p>
+        </div>
+      </section>
 
-    <section className="brief-intro"><div className="section__inner"><p>Это не просто футбольная школа.</p><h2>Это полноценная система развития игрока: от первых шагов в футболе до взрослой команды, международного образования и профессиональных возможностей.</h2></div></section>
+      <section className="brief-intro">
+        <div className="section__inner">
+          <p>Это не просто футбольная школа.</p>
+          <h2>
+            Это полноценная система развития игрока: от первых шагов в футболе
+            до взрослой команды, международного образования и профессиональных
+            возможностей.
+          </h2>
+        </div>
+      </section>
 
+      <section className="section senior-intro" id="senior">
+        <div className="section__inner programme-grid">
+          <div className="programme-copy">
+            <span className="eyebrow">SENIOR TEAM</span>
+            <h2>Взрослая команда</h2>
+            <p>
+              Respect Senior Team создана в 2026 году как финальная ступень
+              развития игроков внутри структуры клуба.
+            </p>
+            <p>
+              Команда является логическим продолжением работы академии и
+              предоставляет возможность лучшим воспитанникам продолжать развитие
+              во взрослом футболе.
+            </p>
+            <p>Мы строим команду не только ради результата сегодня.</p>
+            <p>
+              Наша цель — создать клуб с собственной идентичностью, долгосрочным
+              видением и устойчивой системой развития игроков.
+            </p>
+          </div>
+          <div className="programme-image">
+            <img
+              src={asset("adult_team.jpeg")}
+              alt="Respect Senior Team"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
 
-    <section className="section senior-intro" id="senior"><div className="section__inner programme-grid"><div className="programme-copy"><span className="eyebrow">SENIOR TEAM</span><h2>Взрослая команда</h2><p>Respect Senior Team создана в 2026 году как финальная ступень развития игроков внутри структуры клуба.</p><p>Команда является логическим продолжением работы академии и предоставляет возможность лучшим воспитанникам продолжать развитие во взрослом футболе.</p><p>Мы строим команду не только ради результата сегодня.</p><p>Наша цель — создать клуб с собственной идентичностью, долгосрочным видением и устойчивой системой развития игроков.</p></div><div className="programme-image"><img src={asset('adult_team.jpeg')} alt="Respect Senior Team" loading="lazy" /></div></div></section>
+      <Academy />
+      <International />
+      <MatchCentre />
+      <News />
+      <Membership />
+      <Partners />
+      <MerchCareers />
+      <Facilities />
+      <Values />
 
-    <Academy />
-    <International />
-    <MatchCentre />
-    <News />
-    <Membership />
-    <Partners />
-    <MerchCareers />
-    <Facilities />
-    <Values />
-
-    <section className="final-cta"><img src={asset('stadium_waves.webp')} alt="" /><div className="final-cta__shade" /><div className="final-cta__content"><img src={asset('logo.jpeg')} alt="Герб Respect Football Project" /><h2>Respect Football Project — это полноценная система развития футболистов, объединяющая детскую академию, международную программу подготовки и взрослую команду.</h2><p>Мы создаём среду, в которой талант получает возможность превратиться в профессиональную карьеру, получить качественное образование и открыть новые возможности как в футболе, так и за его пределами.</p></div></section>
-  </main>
+      <section className="final-cta">
+        <img src={asset("stadium_waves.webp")} alt="" />
+        <div className="final-cta__shade" />
+        <div className="final-cta__content">
+          <img src={asset("logo.jpeg")} alt="Герб Respect Football Project" />
+          <h2>
+            Respect Football Project — это полноценная система развития
+            футболистов, объединяющая детскую академию, международную программу
+            подготовки и взрослую команду.
+          </h2>
+          <p>
+            Мы создаём среду, в которой талант получает возможность превратиться
+            в профессиональную карьеру, получить качественное образование и
+            открыть новые возможности как в футболе, так и за его пределами.
+          </p>
+        </div>
+      </section>
+    </main>
+  );
 }
 
 function SectionTitle({ kicker, title }) {
-  const image = title === 'Наш путь'
-    ? ['our_journey.jpeg', 'Юные игроки Respect Academy с кубком и клубным флагом', 'Наш путь · Respect Academy Base']
-    : title === 'НАШИ ДОСТИЖЕНИЯ'
-      ? ['academy_achivments.jpeg', 'Игроки Respect Academy празднуют победу с кубком', 'Наши достижения · Respect Academy Base']
-      : title === 'Наша методология'
-        ? ['methods.png', 'Игрок Respect применяет методологию футбольного интеллекта в игровой ситуации', 'Наша методология · Футбольный интеллект']
-        : null
-  return <><div className="brief-title"><span className="eyebrow">{kicker}</span><h2>{title}</h2></div>{image && <figure className="academy-editorial-image"><img src={asset(image[0])} alt={image[1]} loading="lazy" /><figcaption>{image[2]}</figcaption></figure>}</>
+  const image =
+    title === "Наш путь"
+      ? [
+          "our_journey.jpeg",
+          "Юные игроки Respect Academy с кубком и клубным флагом",
+          "Наш путь · Respect Academy Base",
+        ]
+      : title === "НАШИ ДОСТИЖЕНИЯ"
+        ? [
+            "academy_achivments.jpeg",
+            "Игроки Respect Academy празднуют победу с кубком",
+            "Наши достижения · Respect Academy Base",
+          ]
+        : title === "Наша методология"
+          ? [
+              "real_training.jpeg",
+              "Игрок Respect применяет методологию футбольного интеллекта в игровой ситуации",
+              "Наша методология · Футбольный интеллект",
+            ]
+          : null;
+  return (
+    <>
+      <div className="brief-title">
+        <span className="eyebrow">{kicker}</span>
+        <h2>{title}</h2>
+      </div>
+      {image && (
+        <figure className="academy-editorial-image">
+          <img src={asset(image[0])} alt={image[1]} loading="lazy" />
+          <figcaption>{image[2]}</figcaption>
+        </figure>
+      )}
+    </>
+  );
 }
 
-function MerchCareers() { return <><section className="section merch-section" id="merch"><div className="section__inner"><SectionTitle kicker="RESPECT MERCH" title="Носи цвета Respect" /><p className="intro-xl">Официальная экипировка и клубная коллекция Respect Football Project.</p><div className="merch-grid">{[['Игровая форма','Официальная коллекция'],['Тренировочная одежда','Для поля и за его пределами'],['Аксессуары','Клубные цвета каждый день']].map(x=><article key={x[0]}><div className="merch-product">R</div><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div><a className="btn btn--gold" href="mailto:cdrespect.es@gmail.com?subject=Respect%20Merch">Узнать о коллекции <Arrow /></a></div></section><section className="section careers-section" id="careers"><div className="section__inner brief-two-col"><div><SectionTitle kicker="КАРЬЕРА В RESPECT" title="Развивай футбол вместе с нами" /><p className="large-copy">Мы создаём профессиональную структуру клуба и ищем людей, которые разделяют наши ценности, амбиции и долгосрочное видение.</p></div><div className="career-roles">{['Тренерский состав','Спортивный менеджмент','Медицина и производительность','Контент и коммуникации'].map(x=><a href="mailto:cdrespect.es@gmail.com?subject=Careers%20at%20Respect" key={x}><strong>{x}</strong><Arrow /></a>)}</div></div></section></> }
+function MerchCareers() {
+  return (
+    <>
+      <section className="section merch-section" id="merch">
+        <div className="section__inner">
+          <SectionTitle kicker="RESPECT MERCH" title="Носи цвета Respect" />
+          <p className="intro-xl">
+            Официальная экипировка и клубная коллекция Respect Football Project.
+          </p>
+          <div className="merch-grid">
+            {[
+              ["Игровая форма", "Официальная коллекция"],
+              ["Тренировочная одежда", "Для поля и за его пределами"],
+              ["Аксессуары", "Клубные цвета каждый день"],
+            ].map((x) => (
+              <article key={x[0]}>
+                <div className="merch-product">R</div>
+                <h3>{x[0]}</h3>
+                <p>{x[1]}</p>
+              </article>
+            ))}
+          </div>
+          <a
+            className="btn btn--gold"
+            href="mailto:cdrespect.es@gmail.com?subject=Respect%20Merch"
+          >
+            Узнать о коллекции <Arrow />
+          </a>
+        </div>
+      </section>
+      <section className="section careers-section" id="careers">
+        <div className="section__inner brief-two-col">
+          <div>
+            <SectionTitle
+              kicker="КАРЬЕРА В RESPECT"
+              title="Развивай футбол вместе с нами"
+            />
+            <p className="large-copy">
+              Мы создаём профессиональную структуру клуба и ищем людей, которые
+              разделяют наши ценности, амбиции и долгосрочное видение.
+            </p>
+          </div>
+          <div className="career-roles">
+            {[
+              "Тренерский состав",
+              "Спортивный менеджмент",
+              "Медицина и производительность",
+              "Контент и коммуникации",
+            ].map((x) => (
+              <a
+                href="mailto:cdrespect.es@gmail.com?subject=Careers%20at%20Respect"
+                key={x}
+              >
+                <strong>{x}</strong>
+                <Arrow />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
 
-function MatchCentre() { return <section className="section match-centre" id="matches"><div className="section__inner"><SectionTitle kicker="MATCH CENTRE" title="Официальные матчи и результаты" /><div className="match-grid"><article className="match-card match-card--empty"><div className="card-label">SENIOR TEAM · 2026/27</div><strong className="score">Календарь ожидается</strong><p>CD Respect предварительно заявлен в Segunda División Regional Тенерифе. Матчи появятся здесь после утверждения федерацией группы и календаря.</p></article><article className="match-card"><div className="card-label">Подтверждённый результат академии</div><strong className="score">3 — 6</strong><p><b>CD Respect · CD Tenerife</b><br/>12 июня 2026 · Torneo de Campeones Alevín Preferente · Dionisio González, Arona</p><a className="match-source" href="https://www.ftf.es/pnfg/NFG_CmpPartido?CodActa=242130&cod_primaria=1000120" target="_blank" rel="noreferrer">Официальный протокол <Arrow /></a></article><article className="match-card"><div className="card-label">ACADEMY · Кубок</div><strong className="score">Полуфиналисты</strong><p>Respect B дошёл до полуфинала Copa Alevín Primera Sur 2025/26.</p><a className="match-source" href="https://www.ftf.es/pnfg/NPcd/NFG_VisCompeticiones_Grupo?cod_primaria=1000123&codequipo=903047460&codgrupo=903512951" target="_blank" rel="noreferrer">Официальная страница турнира <Arrow /></a></article></div><a className="btn btn--gold" href="https://www.ftf.es/pnfg/NPcd/NFG_LstCompeticiones_Vis?cod_primaria=1000123" target="_blank" rel="noreferrer">Проверить календарь и результаты онлайн <Arrow /></a></div></section> }
+function MatchCentre() {
+  return (
+    <section className="section match-centre" id="matches">
+      <div className="section__inner">
+        <SectionTitle
+          kicker="MATCH CENTRE"
+          title="Официальные матчи и результаты"
+        />
+        <div className="match-grid">
+          <article className="match-card match-card--empty">
+            <div className="card-label">SENIOR TEAM · 2026/27</div>
+            <strong className="score">Календарь ожидается</strong>
+            <p>
+              CD Respect предварительно заявлен в Segunda División Regional
+              Тенерифе. Матчи появятся здесь после утверждения федерацией группы
+              и календаря.
+            </p>
+          </article>
+          <article className="match-card">
+            <div className="card-label">Подтверждённый результат академии</div>
+            <strong className="score">3 — 6</strong>
+            <p>
+              <b>CD Respect · CD Tenerife</b>
+              <br />
+              12 июня 2026 · Torneo de Campeones Alevín Preferente · Dionisio
+              González, Arona
+            </p>
+            <a
+              className="match-source"
+              href="https://www.ftf.es/pnfg/NFG_CmpPartido?CodActa=242130&cod_primaria=1000120"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Официальный протокол <Arrow />
+            </a>
+          </article>
+          <article className="match-card">
+            <div className="card-label">ACADEMY · Кубок</div>
+            <strong className="score">Полуфиналисты</strong>
+            <p>
+              Respect B дошёл до полуфинала Copa Alevín Primera Sur 2025/26.
+            </p>
+            <a
+              className="match-source"
+              href="https://www.ftf.es/pnfg/NPcd/NFG_VisCompeticiones_Grupo?cod_primaria=1000123&codequipo=903047460&codgrupo=903512951"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Официальная страница турнира <Arrow />
+            </a>
+          </article>
+        </div>
+        <a
+          className="btn btn--gold"
+          href="https://www.ftf.es/pnfg/NPcd/NFG_LstCompeticiones_Vis?cod_primaria=1000123"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Проверить календарь и результаты онлайн <Arrow />
+        </a>
+      </div>
+    </section>
+  );
+}
 
-function Academy() { return <>
-  <section className="section programmes" id="academy"><div className="section__inner programme-grid"><div className="programme-copy"><span className="eyebrow">ACADEMY BASE</span><h2>Детская футбольная академия</h2><p>Respect Academy Base является самым быстрорастущим футбольным проектом острова Тенерифе по количеству команд и игроков.</p><p>Проект начал свой путь с одной команды категории Alevín и за несколько лет вырос в полноценную футбольную академию практически со всеми возрастными категориями.</p></div><div className="programme-image"><img src={asset('youth_2.webp')} alt="Respect Academy Base" loading="lazy" /></div></div></section>
-  <section className="section academy-path"><div className="section__inner"><SectionTitle kicker="ACADEMY BASE" title="Наш путь" /><div className="season-grid"><Season title="Первый сезон · 2023/24" items={['1 команда Alevín']} /><Season title="Второй сезон · 2024/25" items={['1 команда Debutantes', '2 команды Alevín', '1 команда Infantil']} /><Season title="Сезон 2026/27" items={['Debutantes', 'Prebenjamín', 'Benjamín', '2 команды Alevín', '2 команды Infantil', 'Cadete', 'Juvenil']} /></div><p className="path-conclusion">Сегодня академия обеспечивает полноценный путь развития футболиста от первых шагов до перехода во взрослый футбол.</p></div></section>
-  <section className="section section--cream"><div className="section__inner brief-two-col"><div><SectionTitle kicker="ACADEMY BASE" title="Наша методология" /><p className="large-copy">В Respect мы развиваем не только технику и физические качества игроков.</p><p>Главный акцент нашей работы — развитие футбольного интеллекта.</p><p>Мы обучаем игроков:</p><BulletList items={academyMethod} /></div><div className="brief-panel"><h3>Мы ищем не просто быстрых или сильных игроков.</h3><p>Мы воспитываем умных футболистов, способных понимать футбол на высоком уровне.</p></div></div></section>
-  <section className="section challenge"><div className="section__inner"><SectionTitle kicker="ACADEMY BASE" title="Развитие через вызов" /><div className="brief-two-col"><p className="large-copy">Один из основных принципов академии — игрок должен постоянно получать новый уровень сложности.</p><div><p>Поэтому наиболее подготовленные футболисты регулярно тренируются и выступают в старших возрастных категориях.</p><blockquote>Мы считаем, что настоящий прогресс начинается там, где заканчивается зона комфорта.</blockquote></div></div></div></section>
-  <section className="section section--cream training-process"><div className="section__inner"><SectionTitle kicker="ACADEMY BASE" title="Тренировочный процесс" /><div className="training-stories">{['methods.png','team_listening.png','youth.webp'].map((image,i)=><article key={image}><figure><img src={asset(image)} alt="" loading="lazy"/></figure><div>{training.slice(i*2,i*2+2).map(x=><p key={x}>{x.replace(/;\s*$/, '')}</p>)}</div></article>)}</div></div></section>
-  <section className="section camps"><div className="section__inner brief-two-col"><div><SectionTitle kicker="ACADEMY BASE" title="Профессиональные летние сборы" /><p className="large-copy">Каждое лето академия проводит профессиональные футбольные сборы по методикам профессиональных академий.</p></div><div className="brief-panel"><p>Программа включает:</p><BulletList items={['двухразовые тренировки;', 'техническую подготовку;', 'тактические занятия;', 'физическую подготовку;', 'анализ игровых ситуаций;', 'работу в профессиональной футбольной среде.']} /></div></div></section>
-  <Achievements />
-  </> }
+function Academy() {
+  return (
+    <>
+      <section className="section programmes" id="academy">
+        <div className="section__inner programme-grid">
+          <div className="programme-copy">
+            <span className="eyebrow">ACADEMY BASE</span>
+            <h2>Детская футбольная академия</h2>
+            <p>
+              Respect Academy Base является самым быстрорастущим футбольным
+              проектом острова Тенерифе по количеству команд и игроков.
+            </p>
+            <p>
+              Проект начал свой путь с одной команды категории Alevín и за
+              несколько лет вырос в полноценную футбольную академию практически
+              со всеми возрастными категориями.
+            </p>
+          </div>
+          <div className="programme-image">
+            <img
+            src={asset("real_5.jpeg")}
+              alt="Respect Academy Base"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="section academy-path">
+        <div className="section__inner">
+          <SectionTitle kicker="ACADEMY BASE" title="Наш путь" />
+          <div className="season-grid">
+            <Season
+              title="Первый сезон · 2023/24"
+              items={["1 команда Alevín"]}
+            />
+            <Season
+              title="Второй сезон · 2024/25"
+              items={[
+                "1 команда Debutantes",
+                "2 команды Alevín",
+                "1 команда Infantil",
+              ]}
+            />
+            <Season
+              title="Сезон 2026/27"
+              items={[
+                "Debutantes",
+                "Prebenjamín",
+                "Benjamín",
+                "2 команды Alevín",
+                "2 команды Infantil",
+                "Cadete",
+                "Juvenil",
+              ]}
+            />
+          </div>
+          <p className="path-conclusion">
+            Сегодня академия обеспечивает полноценный путь развития футболиста
+            от первых шагов до перехода во взрослый футбол.
+          </p>
+        </div>
+      </section>
+      <section className="section section--cream">
+        <div className="section__inner brief-two-col">
+          <div>
+            <SectionTitle kicker="ACADEMY BASE" title="Наша методология" />
+            <p className="large-copy">
+              В Respect мы развиваем не только технику и физические качества
+              игроков.
+            </p>
+            <p>
+              Главный акцент нашей работы — развитие футбольного интеллекта.
+            </p>
+            <p>Мы обучаем игроков:</p>
+            <BulletList items={academyMethod} />
+          </div>
+          <div className="brief-panel">
+            <h3>Мы ищем не просто быстрых или сильных игроков.</h3>
+            <p>
+              Мы воспитываем умных футболистов, способных понимать футбол на
+              высоком уровне.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="section challenge">
+        <div className="section__inner">
+          <SectionTitle kicker="ACADEMY BASE" title="Развитие через вызов" />
+          <div className="brief-two-col">
+            <p className="large-copy">
+              Один из основных принципов академии — игрок должен постоянно
+              получать новый уровень сложности.
+            </p>
+            <div>
+              <p>
+                Поэтому наиболее подготовленные футболисты регулярно тренируются
+                и выступают в старших возрастных категориях.
+              </p>
+              <blockquote>
+                Мы считаем, что настоящий прогресс начинается там, где
+                заканчивается зона комфорта.
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section section--cream training-process">
+        <div className="section__inner">
+          <SectionTitle kicker="ACADEMY BASE" title="Тренировочный процесс" />
+          <div className="training-stories">
+            {["real_training.jpeg", "real_2.jpeg", "real_3.jpeg"].map(
+              (image, i) => (
+                <article key={image}>
+                  <figure>
+                    <img src={asset(image)} alt="" loading="lazy" />
+                  </figure>
+                  <div>
+                    {training.slice(i * 2, i * 2 + 2).map((x) => (
+                      <p key={x}>{x.replace(/;\s*$/, "")}</p>
+                    ))}
+                  </div>
+                </article>
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+      <section className="section camps">
+        <div className="section__inner brief-two-col">
+          <div>
+            <SectionTitle
+              kicker="ACADEMY BASE"
+              title="Профессиональные летние сборы"
+            />
+            <p className="large-copy">
+              Каждое лето академия проводит профессиональные футбольные сборы по
+              методикам профессиональных академий.
+            </p>
+          </div>
+          <div className="brief-panel">
+            <p>Программа включает:</p>
+            <BulletList
+              items={[
+                "двухразовые тренировки;",
+                "техническую подготовку;",
+                "тактические занятия;",
+                "физическую подготовку;",
+                "анализ игровых ситуаций;",
+                "работу в профессиональной футбольной среде.",
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+      <Achievements />
+    </>
+  );
+}
 
-function Season({ title, items }) { return <article><span>{title}</span><BulletList items={items} /></article> }
+function Season({ title, items }) {
+  return (
+    <article>
+      <span>{title}</span>
+      <BulletList items={items} />
+    </article>
+  );
+}
 
 function Achievements() {
-  const cards=[
-    ['Сезон 2024/25 · Alevín',['4 место в Preferente Alevín;','Финалист Кубка (2 место);','Участник Lanzarote Cup;','Участник международного турнира (название уточняется).']],
-    ['Индивидуальные достижения',['Золотая бутса турнира;','MVP турнира.']],
-    ['Развитие игроков',['1 воспитанник получил возможность продолжить карьеру в CD Tenerife;','1 воспитанник получил вызов в Южную сборную Канарских островов.']],
-    ['Сезон 2025/26 · Debutantes',['Серебряный призёр чемпионата Южного Тенерифе;','Обладатель Кубка категории Debutantes.']],
-    ['Alevín A',['Чемпион Preferente Alevín;','Победитель Silver Division Madrid ESA Cup.']],
-    ['Международные турниры',['Alevín B · Lanzarote Cup;','Infantil · Lanzarote Cup.']],
-    ['Индивидуальные достижения 2025/26',['Debutantes · Лучший бомбардир категории Debutantes на Тенерифе.','Alevín · Лучший бомбардир южной группы категории Alevín.','Infantil · Лучший бомбардир Primera Infantil.']],
-    ['Развитие игроков 2025/26',['3 воспитанника получили возможность продолжить карьеру в CD Tenerife;','5 игроков категории Alevín получили вызов в Южную сборную Канарских островов;','1 игрок получил приглашение в академию Rayo Vallecano.']]
-  ]
-  const render=(x)=><Achievement key={x[0]} title={x[0]} items={x[1]} />
-  return <section className="section achievements-detail"><div className="section__inner"><SectionTitle kicker="ACADEMY BASE" title="НАШИ ДОСТИЖЕНИЯ" /><div className="achievement-columns achievement-columns--highlights">{cards.slice(0,3).map(render)}</div><details className="achievement-disclosure"><summary>Показать все достижения</summary><div className="achievement-columns">{cards.slice(3).map(render)}</div></details><div className="success-measure"><h3>Наш показатель успеха</h3><p>Мы оцениваем работу академии не только по результатам команд.</p><p>Главным показателем успеха для нас является развитие игроков и их готовность к следующему уровню.</p><p>Результатом этой работы становятся:</p><BulletList items={['переходы в профессиональные академии;', 'вызовы в сборные;', 'индивидуальные награды;', 'успешные выступления на международных турнирах;', 'дальнейший рост игроков внутри структуры Respect Football Project.']} /></div></div></section>
+  const cards = [
+    [
+      "Сезон 2024/25 · Alevín",
+      [
+        "4 место в Preferente Alevín;",
+        "Финалист Кубка (2 место);",
+        "Участник Lanzarote Cup;",
+        "Участник международного турнира (название уточняется).",
+      ],
+    ],
+    ["Индивидуальные достижения", ["Золотая бутса турнира;", "MVP турнира."]],
+    [
+      "Развитие игроков",
+      [
+        "1 воспитанник получил возможность продолжить карьеру в CD Tenerife;",
+        "1 воспитанник получил вызов в Южную сборную Канарских островов.",
+      ],
+    ],
+    [
+      "Сезон 2025/26 · Debutantes",
+      [
+        "Серебряный призёр чемпионата Южного Тенерифе;",
+        "Обладатель Кубка категории Debutantes.",
+      ],
+    ],
+    [
+      "Alevín A",
+      [
+        "Чемпион Preferente Alevín;",
+        "Победитель Silver Division Madrid ESA Cup.",
+      ],
+    ],
+    [
+      "Международные турниры",
+      ["Alevín B · Lanzarote Cup;", "Infantil · Lanzarote Cup."],
+    ],
+    [
+      "Индивидуальные достижения 2025/26",
+      [
+        "Debutantes · Лучший бомбардир категории Debutantes на Тенерифе.",
+        "Alevín · Лучший бомбардир южной группы категории Alevín.",
+        "Infantil · Лучший бомбардир Primera Infantil.",
+      ],
+    ],
+    [
+      "Развитие игроков 2025/26",
+      [
+        "3 воспитанника получили возможность продолжить карьеру в CD Tenerife;",
+        "5 игроков категории Alevín получили вызов в Южную сборную Канарских островов;",
+        "1 игрок получил приглашение в академию Rayo Vallecano.",
+      ],
+    ],
+  ];
+  const render = (x) => <Achievement key={x[0]} title={x[0]} items={x[1]} />;
+  return (
+    <section className="section achievements-detail">
+      <div className="section__inner">
+        <SectionTitle kicker="ACADEMY BASE" title="НАШИ ДОСТИЖЕНИЯ" />
+        <div className="achievement-columns achievement-columns--highlights">
+          {cards.slice(0, 3).map(render)}
+        </div>
+        <details className="achievement-disclosure">
+          <summary>Показать все достижения</summary>
+          <div className="achievement-columns">
+            {cards.slice(3).map(render)}
+          </div>
+        </details>
+        <div className="success-measure">
+          <h3>Наш показатель успеха</h3>
+          <p>Мы оцениваем работу академии не только по результатам команд.</p>
+          <p>
+            Главным показателем успеха для нас является развитие игроков и их
+            готовность к следующему уровню.
+          </p>
+          <p>Результатом этой работы становятся:</p>
+          <BulletList
+            items={[
+              "переходы в профессиональные академии;",
+              "вызовы в сборные;",
+              "индивидуальные награды;",
+              "успешные выступления на международных турнирах;",
+              "дальнейший рост игроков внутри структуры Respect Football Project.",
+            ]}
+          />
+        </div>
+      </div>
+    </section>
+  );
 }
-function Achievement({ title, subtitle, items }) { return <article><h3>{title}</h3>{subtitle && <p>{subtitle}</p>}<BulletList items={items} /></article> }
+function Achievement({ title, subtitle, items }) {
+  return (
+    <article>
+      <h3>{title}</h3>
+      {subtitle && <p>{subtitle}</p>}
+      <BulletList items={items} />
+    </article>
+  );
+}
 
-function International() { return <section className="section international-full" id="international"><div className="section__inner"><SectionTitle kicker="INTERNATIONAL ACADEMY" title="Футбол. Образование. Возможности." /><p className="intro-xl">Respect International Academy создана для игроков 14–19 лет из разных стран мира.</p><p>Игроки живут, учатся и тренируются на Тенерифе, ежедневно погружаясь в профессиональную футбольную среду.</p><h3 className="subheading">Что включает программа</h3><ProgrammeStories items={programme} /><div className="education-block"><div><h3>Образование и профессиональное развитие</h3><p>В партнёрстве со школой Стивена Джеррарда участники программы получают доступ к образовательным направлениям:</p><BulletList items={['футбольный тренер;', 'фитнес-тренер;', 'спортивная нутрициология;', 'спортивный массаж;', 'спортивная медицина;', 'спортивный менеджмент;', 'футбольный бизнес;', 'предпринимательство в спорте.']} /></div><blockquote>Наша задача — подготовить молодых людей не только к карьере футболиста, но и к успешной работе в спортивной индустрии.</blockquote></div><h3 className="subheading">Возможности после окончания программы</h3><OpportunityStories items={['продолжение карьеры в Respect Football Project;', 'переход в партнёрские клубы;', 'просмотры в профессиональных клубах Испании;', 'возможность участия в университетских программах США;', 'продолжение карьеры в других странах Европы.']} /></div></section> }
+function International() {
+  return (
+    <section className="section international-full" id="international">
+      <div className="section__inner">
+        <SectionTitle
+          kicker="INTERNATIONAL ACADEMY"
+          title="Футбол. Образование. Возможности."
+        />
+        <p className="intro-xl">
+          Respect International Academy создана для игроков 14–19 лет из разных
+          стран мира.
+        </p>
+        <p>
+          Игроки живут, учатся и тренируются на Тенерифе, ежедневно погружаясь в
+          профессиональную футбольную среду.
+        </p>
+        <h3 className="subheading">Что включает программа</h3>
+        <ProgrammeStories items={programme} />
+        <div className="education-block">
+          <div>
+            <h3>Образование и профессиональное развитие</h3>
+            <p>
+              В партнёрстве со школой Стивена Джеррарда участники программы
+              получают доступ к образовательным направлениям:
+            </p>
+            <BulletList
+              items={[
+                "футбольный тренер;",
+                "фитнес-тренер;",
+                "спортивная нутрициология;",
+                "спортивный массаж;",
+                "спортивная медицина;",
+                "спортивный менеджмент;",
+                "футбольный бизнес;",
+                "предпринимательство в спорте.",
+              ]}
+            />
+          </div>
+          <blockquote>
+            Наша задача — подготовить молодых людей не только к карьере
+            футболиста, но и к успешной работе в спортивной индустрии.
+          </blockquote>
+        </div>
+        <h3 className="subheading">Возможности после окончания программы</h3>
+        <OpportunityStories
+          items={[
+            "продолжение карьеры в Respect Football Project;",
+            "переход в партнёрские клубы;",
+            "просмотры в профессиональных клубах Испании;",
+            "возможность участия в университетских программах США;",
+            "продолжение карьеры в других странах Европы.",
+          ]}
+        />
+      </div>
+    </section>
+  );
+}
 
-function News() { return <section className="section news-banner" id="news"><div className="section__inner"><img src={asset('news_russian.webp')} alt="Новости CD Respect" loading="lazy" /></div></section> }
+function News() {
+  return (
+    <section className="section news-banner" id="news">
+      <div className="section__inner">
+        <img
+          src={asset("news_russian.webp")}
+          alt="Новости CD Respect"
+          loading="lazy"
+        />
+      </div>
+    </section>
+  );
+}
 
-function Membership() { return <section className="section membership" id="socios"><div className="section__inner"><SectionTitle kicker="SOCIOS DEL CLUB" title="Станьте частью Respect" /><div className="membership-grid"><article><span>SOCIO</span><h3>50 € <small>в год</small></h3><BulletList items={['карта Socio;', 'скидки партнёров;', 'специальные предложения клуба;', 'участие в мероприятиях;', 'участие в рождественской лотерее (1 билет).']} /></article><article className="membership-gold"><span>SOCIO GOLD</span><h3>200 € <small>в год</small></h3><p>Всё из Socio плюс:</p><BulletList items={['доступ к закрытому разделу сайта;', 'видеотека матчей;', 'фотоархив клуба;', 'эксклюзивный контент;', 'библиотека индивидуальных тренировок;', 'программы самостоятельного развития игроков;', 'методические материалы тренеров;', 'материалы по развитию техники;', 'материалы по развитию футбольному интеллекту;', 'участие в рождественской лотерее (2 билета).']} /></article></div></div></section> }
+function Membership() {
+  return (
+    <section className="section membership" id="socios">
+      <div className="section__inner">
+        <SectionTitle kicker="SOCIOS DEL CLUB" title="Станьте частью Respect" />
+        <div className="membership-grid">
+          <article>
+            <span>SOCIO</span>
+            <h3>
+              50 € <small>в год</small>
+            </h3>
+            <BulletList
+              items={[
+                "карта Socio;",
+                "скидки партнёров;",
+                "специальные предложения клуба;",
+                "участие в мероприятиях;",
+                "участие в рождественской лотерее (1 билет).",
+              ]}
+            />
+          </article>
+          <article className="membership-gold">
+            <span>SOCIO GOLD</span>
+            <h3>
+              200 € <small>в год</small>
+            </h3>
+            <p>Всё из Socio плюс:</p>
+            <BulletList
+              items={[
+                "доступ к закрытому разделу сайта;",
+                "видеотека матчей;",
+                "фотоархив клуба;",
+                "эксклюзивный контент;",
+                "библиотека индивидуальных тренировок;",
+                "программы самостоятельного развития игроков;",
+                "методические материалы тренеров;",
+                "материалы по развитию техники;",
+                "материалы по развитию футбольному интеллекту;",
+                "участие в рождественской лотерее (2 билета).",
+              ]}
+            />
+          </article>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-function Partners() { return <section className="section partners-full" id="partners"><div className="section__inner brief-two-col"><div><SectionTitle kicker="ПАРТНЁРЫ И СПОНСОРЫ" title="Партнёры могут поддерживать:" /><BulletList items={['Senior Team;', 'Academy Base;', 'International Academy;', 'турниры;', 'футбольные сборы;', 'образовательные программы;', 'отдельные команды;', 'социальные проекты клуба.']} /></div><div className="brief-panel"><h3>Форматы сотрудничества:</h3><BulletList items={['Генеральный партнёр;', 'Партнёр академии;', 'Партнёр команды;', 'Партнёр мероприятий;', 'Технический партнёр.']} /><a className="btn btn--gold" href="#contacts">Стать партнёром <Arrow /></a></div></div></section> }
+function Partners() {
+  return (
+    <section className="section partners-full" id="partners">
+      <div className="section__inner brief-two-col">
+        <div>
+          <SectionTitle
+            kicker="ПАРТНЁРЫ И СПОНСОРЫ"
+            title="Партнёры могут поддерживать:"
+          />
+          <BulletList
+            items={[
+              "Senior Team;",
+              "Academy Base;",
+              "International Academy;",
+              "турниры;",
+              "футбольные сборы;",
+              "образовательные программы;",
+              "отдельные команды;",
+              "социальные проекты клуба.",
+            ]}
+          />
+        </div>
+        <div className="brief-panel">
+          <h3>Форматы сотрудничества:</h3>
+          <BulletList
+            items={[
+              "Генеральный партнёр;",
+              "Партнёр академии;",
+              "Партнёр команды;",
+              "Партнёр мероприятий;",
+              "Технический партнёр.",
+            ]}
+          />
+          <a
+            className="btn btn--gold"
+            href="mailto:cdrespect.es@gmail.com?subject=Partnership%20enquiry"
+          >
+            Стать партнёром <Arrow />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-function Facilities() { const bases=[['Campo Municipal de Fútbol Dionisio González','Campo Municipal de Fútbol Dionisio González, El Fraile, Arona, Tenerife'],['Los Cristianos','Los Cristianos, Arona, Tenerife']]; return <section className="section section--cream" id="facilities"><div className="section__inner"><SectionTitle kicker="ТРЕНИРОВОЧНЫЕ ОБЪЕКТЫ" title="Наши базы на Тенерифе" /><div className="facility-cards">{bases.map((x,i)=><article key={x[0]}><div className="facility-map"><iframe src={`https://maps.google.com/maps?q=${encodeURIComponent(x[1])}&z=15&output=embed`} title={`${x[0]} · Google Maps`} loading="eager" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/></div><a className="map-fallback" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[1])}`} target="_blank" rel="noreferrer">Открыть в Google Maps <Arrow /></a><p>{i?'Дополнительная база':'Основная база'}</p><h3>{x[0]}</h3><span>{i?'Arona, Tenerife':'El Fraile, Arona, Tenerife'}</span></article>)}</div></div></section> }
+function Facilities() {
+  const bases = [
+    [
+      "Campo Municipal de Fútbol Dionisio González",
+      "Campo Municipal de Fútbol Dionisio González, El Fraile, Arona, Tenerife",
+    ],
+    ["Los Cristianos", "Los Cristianos, Arona, Tenerife"],
+  ];
+  return (
+    <section className="section section--cream" id="facilities">
+      <div className="section__inner">
+        <SectionTitle
+          kicker="ТРЕНИРОВОЧНЫЕ ОБЪЕКТЫ"
+          title="Наши базы на Тенерифе"
+        />
+        <div className="facility-cards">
+          {bases.map((x, i) => (
+            <article key={x[0]}>
+              <div className="facility-map">
+                <iframe
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(x[1])}&z=15&output=embed`}
+                  title={`${x[0]} · Google Maps`}
+                  loading="eager"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+              <a
+                className="map-fallback"
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[1])}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Открыть в Google Maps <Arrow />
+              </a>
+              <p>{i ? "Дополнительная база" : "Основная база"}</p>
+              <h3>{x[0]}</h3>
+              <span>
+                {i ? "Arona, Tenerife" : "El Fraile, Arona, Tenerife"}
+              </span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-function Values() { return <section className="section section--cream" id="values"><div className="section__inner"><SectionTitle kicker="RESPECT" title="Что определяет каждое наше решение." /><div className="values-grid">{['Уважение', 'Амбиции', 'Дисциплина', 'Интеллект', 'Развитие', 'Возможности'].map((x) => <div className="value" key={x}><strong>{x}</strong></div>)}</div></div></section> }
+function Values() {
+  return (
+    <section className="section section--cream" id="values">
+      <div className="section__inner">
+        <SectionTitle
+          kicker="RESPECT"
+          title="Что определяет каждое наше решение."
+        />
+        <div className="values-grid">
+          {[
+            "Уважение",
+            "Амбиции",
+            "Дисциплина",
+            "Интеллект",
+            "Развитие",
+            "Возможности",
+          ].map((x) => (
+            <div className="value" key={x}>
+              <strong>{x}</strong>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

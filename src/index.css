@@ -952,3 +952,8 @@ body.menu-open{overflow:hidden}.section__inner{width:min(100%,1200px)}.client-br
 .programmes#academy .programme-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center}.programmes#academy .programme-image{width:100%;height:auto;max-height:none;aspect-ratio:16/9;border-radius:var(--radius-md)}.programmes#academy .programme-image img{width:100%;height:100%;object-fit:cover;object-position:center;transform:none;filter:none}.programmes#academy .programme-image:hover img{transform:scale(1.012)}
 @media(max-width:1180px){.programmes#academy .programme-grid{grid-template-columns:minmax(0,1fr)}.programmes#academy .programme-image{aspect-ratio:16/9}}
 @media(max-width:700px){.programmes#academy .programme-image{aspect-ratio:16/9;border-radius:12px}.programmes#academy .programme-image:hover img{transform:none}}
+
+/* Verified match-centre sources and long multilingual status labels */
+.match-source{display:inline-flex;align-items:center;gap:.45rem;margin-top:auto;color:var(--gold);font-weight:800;text-decoration:none}
+.match-source:hover{text-decoration:underline;text-underline-offset:.25em}
+.match-card .score{font-size:clamp(1.45rem,2.5vw,2.3rem);line-height:1.05;overflow-wrap:anywhere}

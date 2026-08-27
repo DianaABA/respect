@@ -1107,3 +1107,11 @@ body::before {
 .client-brief .contact-section .contact-options{background:rgba(3,16,28,.56);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}
 .client-brief .contact-section .contact-options a{background:rgba(3,16,28,.5)}
 @media(max-width:700px){.client-brief .contact-section{background-position:58% center}.client-brief .contact-section .contact-options{backdrop-filter:none}}
+
+/* Tenerife team journey and student-athlete storytelling */
+.client-brief .careers-section{position:relative;background-color:#020c18;background-image:linear-gradient(90deg,rgba(2,12,24,.97) 0%,rgba(2,12,24,.82) 52%,rgba(2,12,24,.66) 100%),url('/team_walking_tenerife.png');background-position:center 42%;background-size:cover;background-repeat:no-repeat}
+.client-brief .careers-section .career-roles{background:rgba(2,12,24,.58);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(7px)}
+.client-brief .education-block{position:relative;isolation:isolate;overflow:hidden;background-color:#071827;background-image:linear-gradient(90deg,rgba(2,12,24,.96) 0%,rgba(2,12,24,.84) 52%,rgba(2,12,24,.62) 100%),url('/young_athlete_computer_wondow.png');background-position:center;background-size:cover;background-repeat:no-repeat}
+.client-brief .education-block::before{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(2,12,24,.06),rgba(2,12,24,.62))}
+.client-brief .education-block>div,.client-brief .education-block>blockquote{padding:clamp(1rem,2.5vw,2rem);background:rgba(2,12,24,.58);border-radius:12px;backdrop-filter:blur(6px)}
+@media(max-width:700px){.client-brief .careers-section{background-position:48% center}.client-brief .careers-section .career-roles,.client-brief .education-block>div,.client-brief .education-block>blockquote{backdrop-filter:none}.client-brief .education-block{background-position:56% center}}

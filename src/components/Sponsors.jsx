@@ -6,6 +6,12 @@ const titles = {
 
 const sponsors = [
   {
+    mark: 'ARONA',
+    name: 'Ayuntamiento de Arona',
+    meta: 'Apoyo institucional',
+    href: 'https://www.arona.org/',
+  },
+  {
     mark: 'KK',
     name: 'King Kong Grill',
     meta: 'Arona · Tenerife',

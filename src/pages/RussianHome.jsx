@@ -1,11 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { asset } from '../lib/asset.js'
+import { PAGE_PATHS } from '../lib/i18n.js'
 
 const Arrow = () => <span aria-hidden="true">↗</span>
 const BulletList = ({ items, className = '' }) => <ul className={`brief-list ${className}`}>{items.map((item) => <li key={item}>{item}</li>)}</ul>
 
-const philosophy = ['развитие собственных игроков;', 'современный атакующий футбол;', 'единая игровая модель клуба;', 'долгосрочное развитие;', 'формирование сильной футбольной идентичности;', 'развитие футбольного интеллекта;', 'смелый и осмысленный футбол;', 'создание и использование пространства;', 'воспитание игроков, способных принимать решения на высоком уровне.']
-const methodology = ['понимание игры;', 'принятие решений;', 'создание пространства;', 'использование пространства;', 'техническое мастерство;', 'тактическое мышление;', 'развитие личности игрока.']
 const academyMethod = ['понимать игру;', 'читать игровые ситуации;', 'принимать решения под давлением;', 'создавать пространство;', 'использовать пространство;', 'самостоятельно решать игровые задачи;', 'мыслить быстрее соперника.']
 const training = ['до 5 тренировок в неделю;', 'лицензированные тренеры;', 'официальные соревнования Федерации футбола;', 'индивидуальная работа с игроками;', 'товарищеские матчи против сильных академий;', 'постоянный мониторинг прогресса игроков.']
 const programme = ['проживание;', 'полноценное питание;', 'сопровождение куратора;', 'двухразовые тренировки;', 'участие в официальных соревнованиях;', 'интеграция в испанский футбол;', 'языковая поддержка;', 'медицинское сопровождение;', 'просмотры в профессиональных клубах.']
@@ -17,7 +16,7 @@ export default function RussianHome() {
     <section className="hero hero--project" id="home">
       <video ref={videoRef} className="hero__video" poster={asset('adult_team.jpeg')} autoPlay muted loop playsInline preload="metadata"><source src={asset('stadium_optimized.mp4')} type="video/mp4" /></video>
       <div className="hero__overlay" />
-      <div className="hero-project__content"><p className="hero-project__kicker">Тенерифе, Испания</p><h1 className="brand-line">CD RESPECT</h1><p className="hero-project__intro">Respect Football Project — это современная футбольная экосистема на Тенерифе, объединяющая детскую академию, взрослую команду и международную программу подготовки игроков.</p><p className="hero-project__intro">Мы создаём среду, в которой талант получает возможность превратиться в профессиональную карьеру.</p><div className="button-row"><a className="btn btn--gold" href="#contacts">Присоединиться <Arrow /></a><a className="btn btn--outline" href="#about">О проекте</a></div><p className="hero-project__slogan">Развиваем. Соревнуемся. Прогрессируем.</p></div>
+      <div className="hero-project__content"><p className="hero-project__kicker">Тенерифе, Испания</p><h1 className="brand-line">CD RESPECT</h1><p className="hero-project__intro">Respect Football Project — это современная футбольная экосистема на Тенерифе, объединяющая детскую академию, взрослую команду и международную программу подготовки игроков.</p><p className="hero-project__intro">Мы создаём среду, в которой талант получает возможность превратиться в профессиональную карьеру.</p><div className="button-row"><a className="btn btn--gold" href="#contacts">Присоединиться <Arrow /></a><a className="btn btn--outline" href={PAGE_PATHS.about.ru}>О проекте</a></div><p className="hero-project__slogan">Развиваем. Соревнуемся. Прогрессируем.</p></div>
     </section>
 
     <section className="brief-intro"><div className="section__inner"><p>Это не просто футбольная школа.</p><h2>Это полноценная система развития игрока: от первых шагов в футболе до взрослой команды, международного образования и профессиональных возможностей.</h2></div></section>
@@ -26,16 +25,9 @@ export default function RussianHome() {
 
     <section className="section senior-intro" id="senior"><div className="section__inner programme-grid"><div className="programme-copy"><span className="eyebrow">SENIOR TEAM</span><h2>Взрослая команда</h2><p>Respect Senior Team создана в 2026 году как финальная ступень развития игроков внутри структуры клуба.</p><p>Команда является логическим продолжением работы академии и предоставляет возможность лучшим воспитанникам продолжать развитие во взрослом футболе.</p><p>Мы строим команду не только ради результата сегодня.</p><p>Наша цель — создать клуб с собственной идентичностью, долгосрочным видением и устойчивой системой развития игроков.</p></div><div className="programme-image"><img src={asset('adult_team.jpeg')} alt="Respect Senior Team" loading="lazy" /></div></div></section>
 
-    <section className="section philosophy-section"><div className="section__inner"><SectionTitle kicker="SENIOR TEAM" title="Наша философия" /><div className="principle-grid">{philosophy.map((item, i) => <div key={item}><span>0{i + 1}</span><p>{item}</p></div>)}</div><div className="brief-manifesto"><h3>Мы убеждены, что футбол начинается не с физических качеств, а с понимания игры.</h3><p>Поэтому мы стремимся развивать игроков, которые умеют думать, анализировать, принимать решения и управлять игрой на поле.</p></div></div></section>
-
-    <section className="section section--cream"><div className="section__inner brief-two-col"><div><SectionTitle kicker="SENIOR TEAM" title="Наши цели" /><p className="large-copy">Respect Senior Team создаётся как долгосрочный спортивный проект с большими амбициями.</p><p>Наша задача — не просто участвовать в соревнованиях, а построить клуб, способный конкурировать на национальном уровне и стать значимой частью испанского футбола.</p></div><div className="brief-panel brief-panel--light"><p>Мы стремимся:</p><BulletList items={['развивать собственных воспитанников и создавать основу команды из игроков системы Respect;', 'последовательно подниматься по испанской футбольной пирамиде;', 'выйти на национальный уровень соревнований;', 'создать профессиональную структуру клуба;', 'стать одним из наиболее узнаваемых футбольных проектов Канарских островов;', 'предоставить нашим игрокам возможность выступать на максимально высоком уровне;', 'создать клуб, который будет гордостью Тенерифе и примером устойчивого футбольного развития.']} /></div></div></section>
-
-    <section className="editorial vision"><img src={asset('respect_1.webp')} alt="Команда Respect Football Project" loading="lazy" /><div className="editorial__shade" /><div className="editorial__copy"><span className="eyebrow">Наше видение</span><h2>Мы верим, что большие достижения начинаются с больших целей.</h2><p>Сегодня мы строим фундамент. Завтра мы хотим видеть Respect среди сильных клубов Испании.</p><p>Каждый большой клуб когда-то начинался с одного поля, одной команды и группы людей, которые верили в свою идею.</p><p>Respect строится с долгосрочным видением и без ограничений в масштабе мечты.</p><p>Мы хотим создать клуб, который будет расти вместе со своими игроками, своими болельщиками и своим сообществом.</p><p>Наша мечта — однажды вывести Respect на уровень профессионального футбола, играть против лучших команд страны и представлять Тенерифе на крупнейших футбольных аренах Испании и Европы.</p></div></section>
-
     <Academy />
     <International />
     <MatchCentre />
-    <About />
     <News />
     <Membership />
     <Partners />
@@ -55,14 +47,10 @@ function SectionTitle({ kicker, title }) {
       ? ['academy_achivments.jpeg', 'Игроки Respect Academy празднуют победу с кубком', 'Наши достижения · Respect Academy Base']
       : title === 'Наша методология'
         ? ['methods.png', 'Игрок Respect применяет методологию футбольного интеллекта в игровой ситуации', 'Наша методология · Футбольный интеллект']
-        : title === 'Наша философия'
-          ? ['team_listening.png', 'Игроки Respect внимательно слушают установку перед игрой', 'Наша философия · Единая команда']
-          : null
+        : null
   return <><div className="brief-title"><span className="eyebrow">{kicker}</span><h2>{title}</h2></div>{image && <figure className="academy-editorial-image"><img src={asset(image[0])} alt={image[1]} loading="lazy" /><figcaption>{image[2]}</figcaption></figure>}</>
 }
 function Stat({ value, label }) { return <article><strong>{value}</strong><p>{label}</p></article> }
-
-function About() { return <section className="section section--cream" id="about"><div className="section__inner brief-two-col"><div><SectionTitle kicker="О ПРОЕКТЕ" title="Respect Football Project основан в 2023 году на острове Тенерифе, Испания." /><p className="large-copy">Наша миссия — создать полноценную систему подготовки футболистов, объединяющую обучение, развитие, соревновательный опыт и реальные карьерные возможности.</p><p>Мы убеждены, что современный футбол требует не только техники и физических качеств.</p><h3 className="gold-statement">Главное качество футболиста — футбольный интеллект.</h3></div><div className="brief-panel"><p>Поэтому в основе нашей методологии лежат:</p><BulletList items={methodology} /></div></div><div className="section__inner full-quote">Мы строим не команды на один сезон. Мы строим игроков на всю карьеру.</div></section> }
 
 function MerchCareers() { return <><section className="section merch-section" id="merch"><div className="section__inner"><SectionTitle kicker="RESPECT MERCH" title="Носи цвета Respect" /><p className="intro-xl">Официальная экипировка и клубная коллекция Respect Football Project.</p><div className="merch-grid">{[['01','Игровая форма','Официальная коллекция'],['02','Тренировочная одежда','Для поля и за его пределами'],['03','Аксессуары','Клубные цвета каждый день']].map(x=><article key={x[0]}><span>{x[0]}</span><div className="merch-product">R</div><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div><a className="btn btn--gold" href="mailto:cdrespect.es@gmail.com?subject=Respect%20Merch">Узнать о коллекции <Arrow /></a></div></section><section className="section careers-section" id="careers"><div className="section__inner brief-two-col"><div><SectionTitle kicker="КАРЬЕРА В RESPECT" title="Развивай футбол вместе с нами" /><p className="large-copy">Мы создаём профессиональную структуру клуба и ищем людей, которые разделяют наши ценности, амбиции и долгосрочное видение.</p></div><div className="career-roles">{['Тренерский состав','Спортивный менеджмент','Медицина и производительность','Контент и коммуникации'].map((x,i)=><a href="mailto:cdrespect.es@gmail.com?subject=Careers%20at%20Respect" key={x}><span>0{i+1}</span><strong>{x}</strong><Arrow /></a>)}</div></div></section></> }
 

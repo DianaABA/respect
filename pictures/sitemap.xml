@@ -24,4 +24,25 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://poetic-youtiao-dfd1bf.netlify.app/en/youth/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://poetic-youtiao-dfd1bf.netlify.app/cantera/" />
   </url>
+  <url>
+    <loc>https://poetic-youtiao-dfd1bf.netlify.app/about/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://poetic-youtiao-dfd1bf.netlify.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://poetic-youtiao-dfd1bf.netlify.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://poetic-youtiao-dfd1bf.netlify.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://poetic-youtiao-dfd1bf.netlify.app/about/" />
+  </url>
+  <url>
+    <loc>https://poetic-youtiao-dfd1bf.netlify.app/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://poetic-youtiao-dfd1bf.netlify.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://poetic-youtiao-dfd1bf.netlify.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://poetic-youtiao-dfd1bf.netlify.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://poetic-youtiao-dfd1bf.netlify.app/about/" />
+  </url>
+  <url>
+    <loc>https://poetic-youtiao-dfd1bf.netlify.app/ru/about/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://poetic-youtiao-dfd1bf.netlify.app/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://poetic-youtiao-dfd1bf.netlify.app/en/about/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://poetic-youtiao-dfd1bf.netlify.app/ru/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://poetic-youtiao-dfd1bf.netlify.app/about/" />
+  </url>
 </urlset>

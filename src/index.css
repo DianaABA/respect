@@ -1095,6 +1095,32 @@ body::before {
 .merch-grid article:nth-child(3) .merch-product::after{display:none}
 @media(max-width:700px){.merch-grid article:nth-child(3) .merch-product{height:auto;aspect-ratio:16/9;background-position:center}}
 
+/* Editorial motion: a single restrained reveal language keeps long pages
+   feeling paced without animating controls, maps, or essential hero content. */
+.reveal-item{opacity:0;transform:translate3d(0,24px,0);transition:opacity .65s var(--ease-premium),transform .8s var(--ease-premium);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
+.reveal-item.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.programme-image.reveal-item,.academy-editorial-image.reveal-item{transform:translate3d(0,28px,0) scale(.985)}
+.programme-image.reveal-item.is-visible,.academy-editorial-image.reveal-item.is-visible{transform:translate3d(0,0,0) scale(1)}
+
+/* Image-led breathing spaces for the two remaining copy-heavy sections.
+   These are deliberately scoped media slots so their imagery can be replaced
+   later without changing the section structure. */
+.client-brief .camps .brief-panel::before,.client-brief .partners-full .brief-panel::before{content:'';display:block;width:100%;aspect-ratio:16/8;margin:0 0 1.75rem;border-radius:var(--radius-sm);background-position:center;background-size:cover;background-repeat:no-repeat;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.client-brief .camps .brief-panel::before{background-image:linear-gradient(180deg,transparent 55%,rgba(2,12,24,.45)),url('/youth.png')}
+.client-brief .partners-full .brief-panel::before{background-image:linear-gradient(180deg,transparent 55%,rgba(2,12,24,.55)),url('/stadium_waves.webp')}
+.client-brief .camps .brief-panel,.client-brief .partners-full .brief-panel{padding:clamp(1.35rem,3vw,2.5rem)}
+
+@media(min-width:901px){.client-brief .membership-gold .brief-list{columns:2;column-gap:2rem}.client-brief .membership-gold .brief-list li{break-inside:avoid}}
+@media(max-width:700px){
+  .client-brief .camps .brief-two-col,.client-brief .partners-full .brief-two-col{gap:1.5rem}
+  .client-brief .camps .brief-panel::before,.client-brief .partners-full .brief-panel::before{aspect-ratio:16/9;margin-bottom:1.25rem}
+  .client-brief .membership-grid{gap:.75rem}
+  .client-brief .membership-grid h3{font-size:clamp(2rem,11vw,2.75rem)}
+  .client-brief .membership-grid .brief-list{margin-top:1rem}
+  .client-brief .membership-grid .brief-list li{padding-top:.62rem;padding-bottom:.62rem;line-height:1.45}
+}
+@media(prefers-reduced-motion:reduce){.reveal-item,.programme-image.reveal-item,.academy-editorial-image.reveal-item{opacity:1;transform:none;transition:none;will-change:auto}}
+
 /* Live Google Maps for training bases */
 .facility-cards .facility-map,.facility-cards article:first-child .facility-map{position:relative;height:auto;aspect-ratio:16/9;margin-bottom:2rem;padding:0;overflow:hidden;background:#d8d4ca}
 .facility-cards article:first-child .facility-map::before{display:none}
@@ -1133,3 +1159,65 @@ body::before {
 .verified-news .news-card__body p{color:#d2dbe2}
 .verified-news .news-card__body>a{position:static;display:grid;place-items:center;width:46px;height:46px;margin-top:auto;margin-left:auto;border:1px solid rgba(255,255,255,.24);border-radius:50%;color:var(--gold-300)}
 @media(max-width:900px){.verified-news__grid{grid-template-columns:1fr}.verified-news .news-card,.verified-news .news-card--featured{grid-column:auto;grid-template-columns:1fr}.verified-news .news-card__image,.verified-news .news-card--featured .news-card__image{height:auto;aspect-ratio:16/9}}
+
+/* Client-supplied combined news artwork, with full-resolution zoom */
+.verified-news{padding-block:clamp(2rem,4vw,4rem);background:#050a0f}
+.news-poster{position:relative;display:block;width:100%;overflow:hidden;border:1px solid rgba(217,185,104,.3);border-radius:16px;box-shadow:0 28px 80px rgba(0,0,0,.36);cursor:zoom-in}
+.news-poster img{display:block;width:100%;height:auto;aspect-ratio:1680/941;object-fit:contain;background:#050a0f}
+.news-poster>span{position:absolute;right:1rem;bottom:1rem;display:grid;place-items:center;width:48px;height:48px;border:1px solid rgba(255,255,255,.5);border-radius:50%;background:rgba(2,12,24,.78);color:#fff;font-size:1.35rem;backdrop-filter:blur(6px)}
+.news-poster>strong{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.news-poster:hover img{transform:scale(1.008);transition:transform .35s var(--ease-premium)}
+@media(max-width:700px){.verified-news{padding:1rem 0}.verified-news .section__inner{width:100%}.news-poster{border-radius:0;border-inline:0}.news-poster>span{width:44px;height:44px;right:.75rem;bottom:.75rem}.news-poster:hover img{transform:none}}
+
+.facility-cards .map-fallback{display:inline-flex;align-items:center;gap:.45rem;margin:-.65rem 2rem 1.25rem;color:var(--gold-300);font-size:.76rem;font-weight:800;text-decoration:underline;text-underline-offset:.25em}
+.facility-cards .map-fallback:hover{color:#fff}
+@media(max-width:700px){.facility-cards .facility-map iframe{min-height:240px}.facility-cards .map-fallback{min-height:44px;margin-top:-.35rem}}
+
+/* Training Process: editorial photography instead of a wall of cards */
+.training-process{background:#e8e5de}
+.training-stories{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:clamp(1rem,2vw,1.75rem)}
+.training-stories article{min-width:0;background:transparent;border:0}
+.training-stories figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/5;border-radius:16px;background:#c9c5bb}
+.training-stories article:first-child figure{aspect-ratio:4/5}
+.training-stories img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s var(--ease-premium)}
+.training-stories article:hover img{transform:scale(1.025)}
+.training-stories figure span{position:absolute;left:1rem;bottom:1rem;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(2,12,24,.82);color:#f1d483;font-size:.72rem;font-weight:800;backdrop-filter:blur(5px)}
+.training-stories article>div{padding:1.25rem .15rem 0}
+.training-stories article>div p{margin:0;padding:.75rem 0;border-top:1px solid rgba(7,24,39,.2);color:#071827;font:600 clamp(1rem,1.3vw,1.2rem)/1.35 var(--font-body)}
+@media(max-width:900px){.training-stories{grid-template-columns:1fr 1fr}.training-stories article:first-child{grid-column:1/-1}.training-stories article:first-child figure{aspect-ratio:16/9}}
+@media(max-width:600px){.training-stories{grid-template-columns:1fr}.training-stories article:first-child{grid-column:auto}.training-stories figure,.training-stories article:first-child figure{aspect-ratio:16/10}.training-stories article:hover img{transform:none}}
+
+/* International programme and opportunities: grouped editorial photo stories */
+.programme-stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.75rem);margin-top:clamp(3rem,6vw,5rem)}
+.opportunity-stories{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1rem,2vw,1.75rem)}
+.programme-stories article,.opportunity-stories article{min-width:0;background:transparent}
+.programme-stories figure,.opportunity-stories figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3;border-radius:16px;background:#c9c5bb}
+.opportunity-stories figure{aspect-ratio:16/10}
+.programme-stories img,.opportunity-stories img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s var(--ease-premium)}
+.programme-stories article:hover img,.opportunity-stories article:hover img{transform:scale(1.025)}
+.programme-stories figure span,.opportunity-stories figure span{position:absolute;left:1rem;bottom:1rem;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(2,12,24,.82);color:#f1d483;font-size:.72rem;font-weight:800}
+.programme-stories article>div,.opportunity-stories article>div{padding:1.1rem .15rem 0}
+.programme-stories p,.opportunity-stories p{margin:0;padding:.7rem 0;border-top:1px solid rgba(7,24,39,.2);color:#071827;font:600 clamp(1rem,1.25vw,1.16rem)/1.4 var(--font-body)}
+@media(max-width:900px){.programme-stories{grid-template-columns:1fr 1fr}.programme-stories article:first-child{grid-column:1/-1}.programme-stories article:first-child figure{aspect-ratio:16/9}.opportunity-stories{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.programme-stories,.opportunity-stories{grid-template-columns:1fr}.programme-stories article:first-child{grid-column:auto}.programme-stories figure,.programme-stories article:first-child figure,.opportunity-stories figure{aspect-ratio:16/10}.programme-stories article:hover img,.opportunity-stories article:hover img{transform:none}}
+
+/* Progress in numbers: one cinematic 3D data stage, not separate cards */
+.achievements-top{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 120%,rgba(38,111,150,.28),transparent 48%),linear-gradient(145deg,#020b13,#071d2d 62%,#03101c)}
+.achievements-top::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 20%,rgba(217,185,104,.07) 48%,transparent 72%);transform:translateX(-100%);animation:stats-light-sweep 7s ease-in-out infinite}
+.achievements-top .section__inner{position:relative;z-index:1}
+.achievements-top .achievement-cards{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:clamp(1.5rem,4vw,3.5rem);border:1px solid rgba(217,185,104,.22);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.012));box-shadow:0 40px 100px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.08);perspective:1100px;transform-style:preserve-3d}
+.achievements-top .achievement-cards::before{content:'';position:absolute;inset:8% 5%;border-radius:50%;background:radial-gradient(ellipse,rgba(55,151,196,.16),transparent 68%);filter:blur(18px);transform:translateZ(-70px)}
+.achievements-top .achievement-cards article{position:relative;z-index:1;min-height:220px;padding:clamp(1.25rem,2.5vw,2.25rem);border:0;border-radius:0;background:transparent!important;box-shadow:none;justify-content:center;text-align:center;transform-style:preserve-3d;animation:stats-float 5.5s ease-in-out infinite;transition:transform .45s var(--ease-premium),filter .45s ease}
+.achievements-top .achievement-cards article+article::before{content:'';position:absolute;left:0;top:18%;bottom:18%;width:1px;background:linear-gradient(transparent,rgba(217,185,104,.45),transparent);transform:translateZ(-10px)}
+.achievements-top .achievement-cards article:nth-child(2){animation-delay:-1.25s}.achievements-top .achievement-cards article:nth-child(3){animation-delay:-2.5s}.achievements-top .achievement-cards article:nth-child(4){animation-delay:-3.75s}
+.achievements-top .achievement-cards article:hover{z-index:3;transform:translateY(-10px) rotateX(7deg) rotateY(-5deg) translateZ(46px);filter:drop-shadow(0 24px 24px rgba(0,0,0,.34))}
+.achievements-top .achievement-cards strong{display:block;color:#f1d483;font-size:clamp(2.2rem,4vw,4.25rem);line-height:.95;letter-spacing:-.035em;text-shadow:0 2px 0 rgba(255,255,255,.08),0 10px 28px rgba(217,185,104,.22);transform:translateZ(34px)}
+.achievements-top .achievement-cards article:last-child strong{max-width:100%;font-size:clamp(1.65rem,2.65vw,3rem);line-height:1.06;letter-spacing:-.025em;overflow-wrap:normal;word-break:normal;hyphens:none;text-wrap:balance}
+:lang(ru) .achievements-top .achievement-cards article:last-child strong{font-size:clamp(1.55rem,2.35vw,2.7rem);letter-spacing:-.035em}
+.achievements-top .achievement-cards p{max-width:22ch;margin:1.2rem auto 0;color:#edf4f8;font-size:clamp(.82rem,1.1vw,1rem);line-height:1.5;transform:translateZ(18px)}
+@keyframes stats-float{0%,100%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-8px) rotateX(2deg)}}
+@keyframes stats-light-sweep{0%,18%{transform:translateX(-100%)}52%,100%{transform:translateX(100%)}}
+@media(max-width:900px){.achievements-top .achievement-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.achievements-top .achievement-cards article:nth-child(3)::before{display:none}.achievements-top .achievement-cards article:nth-child(n+3){border-top:1px solid rgba(217,185,104,.18)}}
+@media(max-width:600px){.achievements-top .achievement-cards{grid-template-columns:1fr;padding:1rem 1.25rem}.achievements-top .achievement-cards article{min-height:155px}.achievements-top .achievement-cards article+article::before{left:15%;right:15%;top:0;bottom:auto;width:auto;height:1px}.achievements-top .achievement-cards article:nth-child(3)::before{display:block}.achievements-top .achievement-cards article:nth-child(n+3){border-top:0}}
+@media(max-width:600px){.achievements-top .achievement-cards article:last-child strong,:lang(ru) .achievements-top .achievement-cards article:last-child strong{font-size:clamp(2rem,10vw,3rem)}}
+@media(prefers-reduced-motion:reduce){.achievements-top::before,.achievements-top .achievement-cards article{animation:none}.achievements-top .achievement-cards article:hover{transform:none}}

@@ -32,6 +32,9 @@ export default function Footer({ locale }) {
           <a href="https://www.facebook.com/cdrespect/" target="_blank" rel="noreferrer">
             Facebook: CD Respect
           </a>
+          <a href="https://www.youtube.com/@CDRespect" target="_blank" rel="noreferrer">
+            YouTube: @CDRespect
+          </a>
         </div>
       </div>
       <div className="footer__bottom">

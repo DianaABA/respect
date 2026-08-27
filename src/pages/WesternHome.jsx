@@ -4,6 +4,7 @@ import {
   OpportunityStories,
   ProgrammeStories,
 } from "../components/ProgrammeStories.jsx";
+import YouTubeShowcase from "../components/YouTubeShowcase.jsx";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 const List = ({ items }) => (
@@ -801,6 +802,7 @@ function Community({ tx }) {
           />
         </div>
       </section>
+      <YouTubeShowcase locale={tx("en", "es")} />
       <section className="section membership" id="socios">
         <div className="section__inner">
           <Title

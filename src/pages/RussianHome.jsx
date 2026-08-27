@@ -4,6 +4,7 @@ import {
   OpportunityStories,
   ProgrammeStories,
 } from "../components/ProgrammeStories.jsx";
+import YouTubeShowcase from "../components/YouTubeShowcase.jsx";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 const BulletList = ({ items, className = "" }) => (
@@ -650,15 +651,18 @@ function International() {
 
 function News() {
   return (
-    <section className="section news-banner" id="news">
-      <div className="section__inner">
-        <img
-          src={asset("news_russian.webp")}
-          alt="Новости CD Respect"
-          loading="lazy"
-        />
-      </div>
-    </section>
+    <>
+      <section className="section news-banner" id="news">
+        <div className="section__inner">
+          <img
+            src={asset("news_russian.webp")}
+            alt="Новости CD Respect"
+            loading="lazy"
+          />
+        </div>
+      </section>
+      <YouTubeShowcase locale="ru" />
+    </>
   );
 }
 

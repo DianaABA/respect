@@ -9,7 +9,7 @@ export default function Navbar({ locale, page }) {
   const t = translations[locale].nav
   const home = PAGE_PATHS.home[locale]
   const labels = locale === 'ru'
-    ? ['Взрослая команда', 'Академия', 'Международная академия', 'Матчи', 'Новости', 'Socios', 'Партнёры', 'Merch', 'Карьера', 'Базы', 'Контакты']
+    ? ['Взрослая команда', 'Академия', 'Международная академия', 'Матчи', 'Новости', 'Socios', 'Партнёры', 'Merch', 'Карьера', 'Локации', 'Контакты']
     : locale === 'es'
       ? ['Equipo Sénior', 'Academia Base', 'Academia Internacional', 'Partidos', 'Noticias', 'Socios', 'Socios comerciales', 'Merch', 'Empleo', 'Instalaciones', 'Contacto']
       : ['Senior Team', 'Academy Base', 'International Academy', 'Matches', 'News', 'Socios', 'Partners', 'Merch', 'Careers', 'Facilities', 'Contact']

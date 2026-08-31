@@ -276,7 +276,7 @@ function Match({ tx }) {
         </div>
         <a
           className="btn btn--gold"
-          href="https://www.ftf.es/pnfg/NPcd/NFG_LstCompeticiones_Vis?cod_primaria=1000123"
+          href="https://futboltenerife.com/1regional-segunda-grupo-tres/"
           target="_blank"
           rel="noreferrer"
         >

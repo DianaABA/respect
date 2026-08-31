@@ -963,7 +963,7 @@ function Contact({ tx }) {
       <div className="section__inner">
         <Title
           over={tx("TRAINING FACILITIES", "INSTALACIONES")}
-          title={tx("Our bases in Tenerife", "Nuestras bases en Tenerife")}
+          title={tx("Our locations in Tenerife", "Nuestras ubicaciones en Tenerife")}
         />
         <div className="facility-cards">
           {bases.map((x, i) => (
@@ -987,8 +987,8 @@ function Contact({ tx }) {
               </a>
               <p>
                 {i
-                  ? tx("Additional base", "Base adicional")
-                  : tx("Primary base", "Base principal")}
+                  ? tx("Additional location", "Ubicación adicional")
+                  : tx("Primary location", "Ubicación principal")}
               </p>
               <h3>{x[1]}</h3>
               <span>Arona, Tenerife</span>

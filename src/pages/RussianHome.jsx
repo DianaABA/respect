@@ -768,7 +768,7 @@ function Facilities() {
       <div className="section__inner">
         <SectionTitle
           kicker="ТРЕНИРОВОЧНЫЕ ОБЪЕКТЫ"
-          title="Наши базы на Тенерифе"
+          title="Наши локации на Тенерифе"
         />
         <div className="facility-cards">
           {bases.map((x, i) => (
@@ -790,7 +790,7 @@ function Facilities() {
               >
                 Открыть в Google Maps <Arrow />
               </a>
-              <p>{i ? "Дополнительная база" : "Основная база"}</p>
+              <p>{i ? "Дополнительная локация" : "Основная локация"}</p>
               <h3>{x[0]}</h3>
               <span>
                 {i ? "Arona, Tenerife" : "El Fraile, Arona, Tenerife"}

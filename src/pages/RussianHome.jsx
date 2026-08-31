@@ -329,7 +329,7 @@ function MatchCentre() {
 function Academy() {
   return (
     <>
-      <section className="section programmes" id="academy">
+      <section className="section programmes programmes--dark" id="academy">
         <div className="section__inner programme-grid">
           <div className="programme-copy">
             <span className="eyebrow">ACADEMY BASE</span>
@@ -388,7 +388,7 @@ function Academy() {
           </p>
         </div>
       </section>
-      <section className="section section--cream">
+      <section className="section academy-methodology">
         <div className="section__inner brief-two-col">
           <div>
             <SectionTitle kicker="ACADEMY BASE" title="Наша методология" />
@@ -432,7 +432,7 @@ function Academy() {
           </div>
         </div>
       </section>
-      <section className="section section--cream training-process">
+      <section className="section training-process">
         <div className="section__inner">
           <SectionTitle kicker="ACADEMY BASE" title="Тренировочный процесс" />
           <div className="training-stories">

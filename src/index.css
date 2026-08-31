@@ -1210,7 +1210,10 @@ body::before {
 }
 
 /* Training Process: editorial photography instead of a wall of cards */
-.training-process{background:#e8e5de}
+.training-process{background:#061522}
+.academy-methodology{background:#071827}
+.training-stories figure{background:#0a2032}
+.training-stories article>div p{color:#fff!important;border-top-color:rgba(255,255,255,.15)!important}
 .training-stories{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:clamp(1rem,2vw,1.75rem)}
 .training-stories article{min-width:0;background:transparent;border:0}
 .training-stories figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/5;border-radius:16px;background:#c9c5bb}

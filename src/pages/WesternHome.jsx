@@ -311,7 +311,7 @@ function Academy({ tx }) {
   );
   return (
     <>
-      <section className="section programmes" id="academy">
+      <section className="section programmes programmes--dark" id="academy">
         <div className="section__inner programme-grid">
           <div className="programme-copy">
             <span className="eyebrow">ACADEMY BASE</span>
@@ -380,7 +380,7 @@ function Academy({ tx }) {
           </p>
         </div>
       </section>
-      <section className="section section--cream">
+      <section className="section academy-methodology">
         <div className="section__inner brief-two-col">
           <div>
             <Title
@@ -508,7 +508,7 @@ function Season({ title, items }) {
 function Features({ title, items }) {
   const images = ["real_training.jpeg", "real_2.jpeg", "real_3.jpeg"];
   return (
-    <section className="section section--cream training-process">
+    <section className="section training-process">
       <div className="section__inner">
         <Title over="ACADEMY BASE" title={title} />
         <div className="training-stories">

@@ -100,7 +100,7 @@ export default function RussianHome() {
       <section className="section senior-intro" id="senior">
         <div className="section__inner programme-grid">
           <div className="programme-copy">
-            <span className="eyebrow">SENIOR TEAM</span>
+            <span className="eyebrow">ВЗРОСЛАЯ КОМАНДА</span>
             <h2>Взрослая команда</h2>
             <p>
               Respect Senior Team создана в 2026 году как финальная ступень
@@ -271,7 +271,7 @@ function MatchCentre() {
         />
         <div className="match-grid">
           <article className="match-card match-card--empty">
-            <div className="card-label">SENIOR TEAM · 2026/27</div>
+            <div className="card-label">Взрослая команда · 2026/27</div>
             <strong className="score">Календарь ожидается</strong>
             <p>
               CD Respect предварительно заявлен в Segunda División Regional
@@ -332,7 +332,7 @@ function Academy() {
       <section className="section programmes programmes--dark" id="academy">
         <div className="section__inner programme-grid">
           <div className="programme-copy">
-            <span className="eyebrow">ACADEMY BASE</span>
+            <span className="eyebrow">АКАДЕМИЯ</span>
             <h2>Детская футбольная академия</h2>
             <p>
               Respect Academy Base является самым быстрорастущим футбольным
@@ -355,7 +355,7 @@ function Academy() {
       </section>
       <section className="section academy-path">
         <div className="section__inner">
-          <SectionTitle kicker="ACADEMY BASE" title="Наш путь" />
+          <SectionTitle kicker="АКАДЕМИЯ" title="Наш путь" />
           <div className="season-grid">
             <Season
               title="Первый сезон · 2023/24"
@@ -391,7 +391,7 @@ function Academy() {
       <section className="section academy-methodology">
         <div className="section__inner brief-two-col">
           <div>
-            <SectionTitle kicker="ACADEMY BASE" title="Наша методология" />
+            <SectionTitle kicker="АКАДЕМИЯ" title="Наша методология" />
             <p className="large-copy">
               В Respect мы развиваем не только технику и физические качества
               игроков.
@@ -413,7 +413,7 @@ function Academy() {
       </section>
       <section className="section challenge">
         <div className="section__inner">
-          <SectionTitle kicker="ACADEMY BASE" title="Развитие через вызов" />
+          <SectionTitle kicker="АКАДЕМИЯ" title="Развитие через вызов" />
           <div className="brief-two-col">
             <p className="large-copy">
               Один из основных принципов академии — игрок должен постоянно
@@ -434,7 +434,7 @@ function Academy() {
       </section>
       <section className="section training-process">
         <div className="section__inner">
-          <SectionTitle kicker="ACADEMY BASE" title="Тренировочный процесс" />
+          <SectionTitle kicker="АКАДЕМИЯ" title="Тренировочный процесс" />
           <div className="training-stories">
             {["real_training.jpeg", "real_2.jpeg", "real_3.jpeg"].map(
               (image, i) => (
@@ -457,7 +457,7 @@ function Academy() {
         <div className="section__inner brief-two-col">
           <div>
             <SectionTitle
-              kicker="ACADEMY BASE"
+              kicker="АКАДЕМИЯ"
               title="Профессиональные летние сборы"
             />
             <p className="large-copy">
@@ -552,7 +552,7 @@ function Achievements() {
   return (
     <section className="section achievements-detail">
       <div className="section__inner">
-        <SectionTitle kicker="ACADEMY BASE" title="НАШИ ДОСТИЖЕНИЯ" />
+        <SectionTitle kicker="АКАДЕМИЯ" title="НАШИ ДОСТИЖЕНИЯ" />
         <div className="achievement-columns achievement-columns--highlights">
           {cards.slice(0, 3).map(render)}
         </div>
@@ -599,7 +599,7 @@ function International() {
     <section className="section international-full" id="international">
       <div className="section__inner">
         <SectionTitle
-          kicker="INTERNATIONAL ACADEMY"
+          kicker="МЕЖДУНАРОДНАЯ АКАДЕМИЯ"
           title="Футбол. Образование. Возможности."
         />
         <p className="intro-xl">

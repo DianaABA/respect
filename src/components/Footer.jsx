@@ -6,7 +6,7 @@ export default function Footer({ locale }) {
   const t = translations[locale].footer
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
       <div className="footer__inner">
         <div className="footer__brand">
           <img src={asset('logo.jpeg')} alt="Escudo CD Respect" className="footer__logo" />

@@ -9,10 +9,10 @@ export default function Navbar({ locale, page }) {
   const t = translations[locale].nav
   const home = PAGE_PATHS.home[locale]
   const labels = locale === 'ru'
-    ? ['Senior Team', 'Academy Base', 'International Academy', 'Матчи', 'Новости', 'Socios', 'Ещё', 'Партнёры', 'Merch', 'Карьера', 'Базы', 'Контакты']
+    ? ['Взрослая команда', 'Академия', 'Международная академия', 'Матчи', 'Новости', 'Socios', 'Партнёры', 'Merch', 'Карьера', 'Базы', 'Контакты']
     : locale === 'es'
-      ? ['Senior Team', 'Academy Base', 'International Academy', 'Partidos', 'Noticias', 'Socios', 'Más', 'Socios comerciales', 'Merch', 'Empleo', 'Instalaciones', 'Contacto']
-      : ['Senior Team', 'Academy Base', 'International Academy', 'Matches', 'News', 'Socios', 'More', 'Partners', 'Merch', 'Careers', 'Facilities', 'Contact']
+      ? ['Equipo Sénior', 'Academia Base', 'Academia Internacional', 'Partidos', 'Noticias', 'Socios', 'Socios comerciales', 'Merch', 'Empleo', 'Instalaciones', 'Contacto']
+      : ['Senior Team', 'Academy Base', 'International Academy', 'Matches', 'News', 'Socios', 'Partners', 'Merch', 'Careers', 'Facilities', 'Contact']
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -61,15 +61,11 @@ export default function Navbar({ locale, page }) {
           <a href={`${home}#matches`} onClick={close}>{labels[3]}</a>
           <a href={`${home}#news`} onClick={close}>{labels[4]}</a>
           <a href={`${home}#socios`} onClick={close}>{labels[5]}</a>
-          <details className="navbar__more">
-            <summary>{labels[6]}</summary>
-            <div className="navbar__more-menu">
-              <a href={`${home}#partners`} onClick={close}>{labels[7]}</a>
-              <a href={`${home}#merch`} onClick={close}>{labels[8]}</a>
-              <a href={`${home}#careers`} onClick={close}>{labels[9]}</a>
-              <a href={`${home}#facilities`} onClick={close}>{labels[10]}</a>
-            </div>
-          </details>
+          <a href={`${home}#partners`} onClick={close}>{labels[6]}</a>
+          <a href={`${home}#merch`} onClick={close}>{labels[7]}</a>
+          <a href={`${home}#careers`} onClick={close}>{labels[8]}</a>
+          <a href={`${home}#facilities`} onClick={close}>{labels[9]}</a>
+          <a href={`${home}#contact`} onClick={close}>{labels[10]}</a>
           <div className="navbar__languages" aria-label="Language selector">
             {LOCALES.map((code) => (
               <a key={code} href={PAGE_PATHS[page][code]} className={`navbar__lang ${locale === code ? 'is-active' : ''}`} onClick={close} hrefLang={code} lang={code} aria-current={locale === code ? 'page' : undefined}>{code.toUpperCase()}</a>

@@ -162,7 +162,7 @@ function Senior({ tx }) {
     <section className="section senior-intro" id="senior">
       <div className="section__inner programme-grid">
         <div className="programme-copy">
-          <span className="eyebrow">SENIOR TEAM</span>
+          <span className="eyebrow">{tx("SENIOR TEAM", "EQUIPO SÉNIOR")}</span>
           <h2>{tx("Senior Team", "Equipo sénior")}</h2>
           <p>
             {tx(
@@ -314,7 +314,7 @@ function Academy({ tx }) {
       <section className="section programmes programmes--dark" id="academy">
         <div className="section__inner programme-grid">
           <div className="programme-copy">
-            <span className="eyebrow">ACADEMY BASE</span>
+            <span className="eyebrow">{tx("ACADEMY BASE", "ACADEMIA BASE")}</span>
             <h2>{tx("Youth football academy", "Academia de fútbol base")}</h2>
             <p>
               {tx(
@@ -341,7 +341,7 @@ function Academy({ tx }) {
       <section className="section academy-path">
         <div className="section__inner">
           <Title
-            over="ACADEMY BASE"
+            over={tx("ACADEMY BASE", "ACADEMIA BASE")}
             title={tx("Our pathway", "Nuestro camino")}
           />
           <div className="season-grid">
@@ -384,7 +384,7 @@ function Academy({ tx }) {
         <div className="section__inner brief-two-col">
           <div>
             <Title
-              over="ACADEMY BASE"
+              over={tx("ACADEMY BASE", "ACADEMIA BASE")}
               title={tx("Our methodology", "Nuestra metodología")}
             />
             <p>
@@ -427,7 +427,7 @@ function Academy({ tx }) {
       <section className="section challenge">
         <div className="section__inner">
           <Title
-            over="ACADEMY BASE"
+            over={tx("ACADEMY BASE", "ACADEMIA BASE")}
             title={tx(
               "Development through challenge",
               "Desarrollo a través del desafío",
@@ -450,12 +450,13 @@ function Academy({ tx }) {
       <Features
         title={tx("Training process", "Proceso de entrenamiento")}
         items={training}
+        tx={tx}
       />
       <section className="section camps">
         <div className="section__inner brief-two-col">
           <div>
             <Title
-              over="ACADEMY BASE"
+              over={tx("ACADEMY BASE", "ACADEMIA BASE")}
               title={tx(
                 "Professional summer camps",
                 "Campus profesionales de verano",
@@ -505,12 +506,12 @@ function Season({ title, items }) {
     </article>
   );
 }
-function Features({ title, items }) {
+function Features({ title, items, tx }) {
   const images = ["real_training.jpeg", "real_2.jpeg", "real_3.jpeg"];
   return (
     <section className="section training-process">
       <div className="section__inner">
-        <Title over="ACADEMY BASE" title={title} />
+        <Title over={tx("ACADEMY BASE", "ACADEMIA BASE")} title={title} />
         <div className="training-stories">
           {images.map((image, i) => (
             <article key={image}>
@@ -645,7 +646,7 @@ function Achievements({ tx }) {
     <section className="section achievements-detail">
       <div className="section__inner">
         <Title
-          over="ACADEMY BASE"
+          over={tx("ACADEMY BASE", "ACADEMIA BASE")}
           title={tx("OUR ACHIEVEMENTS", "NUESTROS LOGROS")}
         />
         <div className="achievement-columns achievement-columns--highlights">
@@ -702,7 +703,7 @@ function International({ tx }) {
     <section className="section international-full" id="international">
       <div className="section__inner">
         <Title
-          over="INTERNATIONAL ACADEMY"
+          over={tx("INTERNATIONAL ACADEMY", "ACADEMIA INTERNACIONAL")}
           title={tx(
             "Football. Education. Opportunities.",
             "Fútbol. Educación. Oportunidades.",

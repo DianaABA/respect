@@ -6,6 +6,7 @@ import {
 } from "../components/ProgrammeStories.jsx";
 import YouTubeShowcase from "../components/YouTubeShowcase.jsx";
 import Sponsors from "../components/Sponsors.jsx";
+import VerifiedNews from "../components/VerifiedNews.jsx";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 const List = ({ items }) => (
@@ -792,18 +793,7 @@ function International({ tx }) {
 function Community({ tx, locale }) {
   return (
     <>
-      <section className="section news-banner" id="news">
-        <div className="section__inner">
-          <img
-            src={asset(tx("news_english.webp", "news.webp"))}
-            alt={tx(
-              "Latest news from CD Respect",
-              "Últimas noticias de CD Respect",
-            )}
-            loading="lazy"
-          />
-        </div>
-      </section>
+      <VerifiedNews locale={locale} />
       <YouTubeShowcase locale={tx("en", "es")} />
       <section className="section membership" id="socios">
         <div className="section__inner">

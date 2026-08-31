@@ -5,6 +5,7 @@ import {
   ProgrammeStories,
 } from "../components/ProgrammeStories.jsx";
 import YouTubeShowcase from "../components/YouTubeShowcase.jsx";
+import Sponsors from "../components/Sponsors.jsx";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 const List = ({ items }) => (
@@ -129,7 +130,7 @@ export default function WesternHome({ locale }) {
       <Academy tx={tx} />
       <International tx={tx} />
       <Match tx={tx} />
-      <Community tx={tx} />
+      <Community tx={tx} locale={locale} />
       <MerchCareers tx={tx} />
       <Values tx={tx} />
       <Contact tx={tx} />
@@ -787,7 +788,7 @@ function International({ tx }) {
   );
 }
 
-function Community({ tx }) {
+function Community({ tx, locale }) {
   return (
     <>
       <section className="section news-banner" id="news">
@@ -861,6 +862,7 @@ function Community({ tx }) {
           </div>
         </div>
       </section>
+      <Sponsors locale={locale} />
       <section className="section partners-full" id="partners">
         <div className="section__inner brief-two-col">
           <div>

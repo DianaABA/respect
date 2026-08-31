@@ -5,6 +5,7 @@ import {
   ProgrammeStories,
 } from "../components/ProgrammeStories.jsx";
 import YouTubeShowcase from "../components/YouTubeShowcase.jsx";
+import Sponsors from "../components/Sponsors.jsx";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 const BulletList = ({ items, className = "" }) => (
@@ -131,6 +132,7 @@ export default function RussianHome() {
       <MatchCentre />
       <News />
       <Membership />
+      <Sponsors locale="ru" />
       <Partners />
       <MerchCareers />
       <Facilities />

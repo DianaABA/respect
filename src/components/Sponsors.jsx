@@ -7,6 +7,7 @@ const titles = {
 const sponsors = [
   {
     mark: 'ARONA',
+    logo: 'sponsor_arona.webp',
     name: 'Ayuntamiento de Arona',
     meta: 'Apoyo institucional',
     href: 'https://www.arona.org/',
@@ -19,9 +20,10 @@ const sponsors = [
   },
   {
     mark: 'R',
+    logo: 'sponsor_rouz.webp',
     name: 'ROUZ España',
     meta: 'Real Estate · Investment',
-    href: 'https://es.linkedin.com/posts/rouz-tenerife-ba0643305_conocerouz-fiscalidad-nudapropiedad-activity-7371093387971563520-7vDH',
+    href: 'https://www.rouz.es/',
   },
 ]
 
@@ -32,7 +34,9 @@ export default function Sponsors({ locale = 'en' }) {
       <div className="brief-title"><span className="eyebrow">{kicker}</span><h2 id="sponsors-title">{title}</h2></div>
       <div className="sponsors-showcase__grid">
         {sponsors.map((sponsor) => <a key={sponsor.name} href={sponsor.href} target="_blank" rel="noreferrer">
-          <span className="sponsors-showcase__mark" aria-hidden="true">{sponsor.mark}</span>
+          <span className={`sponsors-showcase__mark${sponsor.logo ? ' sponsors-showcase__mark--logo' : ''}`} aria-hidden="true">
+            {sponsor.logo ? <img src={`/${sponsor.logo}`} alt="" loading="lazy" /> : sponsor.mark}
+          </span>
           <span><strong>{sponsor.name}</strong><small>{sponsor.meta}</small></span>
           <span aria-hidden="true">↗</span>
         </a>)}

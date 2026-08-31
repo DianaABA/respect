@@ -14,6 +14,8 @@ const sponsors = [
   },
   {
     mark: 'KK',
+    logo: 'sponsor_kingkong.webp',
+    badge: true,
     name: 'King Kong Grill',
     meta: 'Arona · Tenerife',
     href: 'https://www.thefork.es/restaurante/king-kong-grill-r856068',
@@ -34,7 +36,7 @@ export default function Sponsors({ locale = 'en' }) {
       <div className="brief-title"><span className="eyebrow">{kicker}</span><h2 id="sponsors-title">{title}</h2></div>
       <div className="sponsors-showcase__grid">
         {sponsors.map((sponsor) => <a key={sponsor.name} href={sponsor.href} target="_blank" rel="noreferrer">
-          <span className={`sponsors-showcase__mark${sponsor.logo ? ' sponsors-showcase__mark--logo' : ''}`} aria-hidden="true">
+          <span className={`sponsors-showcase__mark${sponsor.logo ? (sponsor.badge ? ' sponsors-showcase__mark--badge' : ' sponsors-showcase__mark--logo') : ''}`} aria-hidden="true">
             {sponsor.logo ? <img src={`/${sponsor.logo}`} alt="" loading="lazy" /> : sponsor.mark}
           </span>
           <span><strong>{sponsor.name}</strong><small>{sponsor.meta}</small></span>
